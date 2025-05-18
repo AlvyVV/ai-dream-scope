@@ -1,0 +1,340 @@
+{
+  "theme": "light",
+  "meta": {
+    "title": "Dream Dictionary & Interpretations | Ai Dream Scope",
+    "description": "Decode your dreams with our AI-powered dream interpretation tool. Get personalized analysis of your dreams based on psychology, symbolism, and cultural insights."
+  },
+  "header": {
+    "brand": {
+      "title": "Ai Dream Scope",
+      "logo": {
+        "src": "/imgs/logo.webp",
+        "alt": "Ai Dream Scope"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "Dream Interpretation",
+          "url": "/dream-interpretation"
+        },
+        {
+          "title": "Dream Dictionary",
+          "url": "/dream-dictionary"
+        },
+        {
+          "title": "Blogs",
+          "url": "/blogs"
+        }
+      ]
+    },
+    "show_sign": true,
+    "show_theme": false,
+    "show_locale": false
+  },
+  "hero": {
+    "title": "Dream Interpretation",
+    "second_title": "Discover What Your Dreams Really Mean",
+    "highlight_text": "Interpretation",
+    "description": "Explore the hidden meanings of your dreams with our advanced AI dream interpretation tool. Our comprehensive dream dictionary analyzes over 10,000 dream symbols across cultural, psychological, and spiritual perspectives. Whether you're experiencing recurring dreams, vivid nightmares, or curious symbols, our dream analysis provides personalized insights beyond traditional dream meanings. ",
+    "announcement": {
+      "label": "POWERED BY AI",
+      "title": "🌙 Ai Dream Scope",
+      "url": "/#pricing"
+    },
+    "tip": "Understand what your subconscious is trying to tell you today.",
+    "buttons": [
+      {
+        "title": "Get Started",
+        "icon": "RiFlashlightFill",
+        "url": "/dream-interpreter",
+        "target": "_self",
+        "variant": "default"
+      },
+      {
+        "title": "Dream Dictionary",
+        "icon": "RiBookOpenLine",
+        "url": "/dream-dictionary",
+        "target": "_blank",
+        "variant": "outline"
+      }
+    ],
+    "show_happy_users": true,
+    "show_badge": false
+  },
+  "showcase": {
+    "name": "commonSymbols",
+    "title": "Explore Common Dream Types & Their Interpretations",
+    "description": "Discover the hidden meanings behind the most frequently reported dreams worldwide. Each dream type offers unique insights into your subconscious mind. Click any category for detailed interpretation, analysis of key symbols, and personalized guidance on what these dreams might reveal about your waking life.",
+    "items": [
+      {
+        "title": "Falling Dreams",
+        "description": "Uncover the interpretation of falling dreams and why this common dream symbol often relates to insecurities and loss of control in waking life.",
+        "url": "/dream-dictionary/falling",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/scenes/falling.webp"
+        }
+      },
+      {
+        "title": "Flying Dreams",
+        "description": "Explore flying dreams interpretation, revealing freedom desires and personal achievements that your subconscious expresses through flight symbols.",
+        "url": "/dream-dictionary/flying",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/scenes/flying.webp"
+        }
+      },
+      {
+        "title": "Being Chased Dreams",
+        "description": "Discover what being chased in dreams means through our detailed interpretation, exploring the anxieties and unresolved conflicts these dreams represent.",
+        "url": "/dream-dictionary/being-chased",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/scenes/being-chased.webp"
+        }
+      },
+      {
+        "title": "Teeth Falling Out Dreams",
+        "description": "Analyze teeth falling out dreams with our comprehensive interpretation guide addressing fears of aging, attractiveness concerns, and communication anxieties.",
+        "url": "/dream-dictionary/teeth-falling-out",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/scenes/teeth-falling.webp"
+        }
+      },
+      {
+        "title": "Exam Dreams",
+        "description": "Understand exam dreams and their interpretation as reflections of self-evaluation, performance anxiety, and fear of judgment in your personal or professional life.",
+        "url": "/dream-dictionary/exam",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/scenes/exam.webp"
+        }
+      },
+      {
+        "title": "Death Dreams",
+        "description": "Learn the true interpretation of death dreams, which rarely predict actual death but symbolize endings, transformations, and major life transitions.",
+        "url": "/dream-dictionary/death",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/scenes/death.webp"
+        }
+      },
+      {
+        "title": "Snake Dreams",
+        "description": "Explore snake dreams interpretation across cultural perspectives, revealing hidden fears, wisdom symbols, or healing transformations in your subconscious mind.",
+        "url": "/dream-dictionary/snake",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/scenes/snake.webp"
+        }
+      },
+      {
+        "title": "Sea Dreams",
+        "description": "Decode water dreams through detailed interpretation of different water states - calm, turbulent, or deep - representing your emotional and spiritual condition.",
+        "url": "/dream-dictionary/sea",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/scenes/water.webp"
+        }
+      },
+      {
+        "title": "Ex-Lover Dreams",
+        "description": "Understand ex-partner dreams with our psychological interpretation framework addressing unresolved feelings, comparison patterns, and emotional healing stages.",
+        "url": "/dream-dictionary/ex-lover",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/scenes/ex-partner.webp"
+        }
+      }
+    ]
+  },
+  "branding": {
+    "title": "Zitsaas is built on the shoulders of giants",
+    "items": [
+      {
+        "title": "Next.js",
+        "image": {
+          "src": "/imgs/logos/nextjs.svg",
+          "alt": "Next.js"
+        }
+      },
+      {
+        "title": "React",
+        "image": {
+          "src": "/imgs/logos/react.svg",
+          "alt": "React"
+        }
+      },
+      {
+        "title": "TailwindCSS",
+        "image": {
+          "src": "/imgs/logos/tailwindcss.svg",
+          "alt": "TailwindCSS"
+        }
+      },
+      {
+        "title": "Shadcn/UI",
+        "image": {
+          "src": "/imgs/logos/shadcn.svg",
+          "alt": "Shadcn/UI"
+        }
+      },
+      {
+        "title": "Vercel",
+        "image": {
+          "src": "/imgs/logos/vercel.svg",
+          "alt": "Vercel"
+        }
+      }
+    ]
+  },
+  "introduce": {
+    "name": "introduce",
+    "title": "What is Ai Dream Scope",
+    "label": "Introduce",
+    "description": "AI Dream Scope is a revolutionary platform that transforms how we understand our dreams through advanced artificial intelligence and comprehensive dream interpretation technology.",
+    "image": {
+      "src": "/imgs/dream-girl.webp"
+    },
+    "items": [
+      {
+        "title": "World Map of Dreams",
+        "link": "/",
+        "description": "Our global dream database analyzes patterns across cultures, creating interactive maps that reveal how geography shapes dream interpretation. Compare your dreams with regional patterns worldwide to discover cultural influences on your subconscious.",
+        "icon": "RiMap2Line"
+      },
+      {
+        "title": "Dream Visualization Studio",
+        "description": "Experience your dreams visually through our AI illustration technology. Your written descriptions transform into detailed artwork capturing key symbols and emotions, enhancing interpretation through visual representation.",
+        "icon": "RiFolderImageLine"
+      },
+      {
+        "title": "Comprehensive Dream Dictionary",
+        "description": "Access our extensive database of over 10,000 dream symbols with interpretations drawn from psychological, cultural, and spiritual traditions. Our AI-enhanced dream dictionary evolves beyond static definitions, offering context-aware meanings that consider your personal associations and dream patterns.",
+        "icon": "RiBook3Line"
+      },
+      {
+        "title": "Personal Dream Insights",
+        "description": "Our AI recognizes patterns across your dream journal, delivering personalized interpretations that evolve with each entry. This ongoing analysis connects recurring themes to your waking life, offering increasingly accurate dream interpretation tailored uniquely to you.",
+        "icon": "RiAiGenerate2"
+      }
+    ]
+  },
+  "usage": {
+    "name": "usage",
+    "title": "How to Interpret Your Dreams",
+    "image": {
+      "src": "/imgs/features/1.png"
+    },
+    "image_position": "left",
+    "text_align": "center",
+    "items": [
+      {
+        "title": "Capture Your Dream",
+        "description": "Record dreams immediately upon waking via our website. Include emotions, colors and characters for precise AI interpretation. Your details enhance our analysis accuracy."
+      },
+      {
+        "title": "Analyze Dream Symbols",
+        "description": "Our AI identifies key symbols and provides cultural interpretations from our World Map of Dreams. Add personal associations for increasingly tailored analysis."
+      },
+      {
+        "title": "Visualize Your Dreamscape",
+        "description": "See your dream transform into visual art through our AI technology. These illustrations highlight symbols and emotional tones, enhancing interpretation clarity."
+      },
+      {
+        "title": "Receive Personalized Insights",
+        "description": "Get comprehensive dream interpretation connecting emotional themes with your life circumstances. Our AI reveals patterns across your dream history for deeper understanding."
+      }
+    ]
+  },
+  "stats": {
+    "name": "stats",
+    "label": "Stats",
+    "title": "The World's Most Advanced Dream Interpretation Platform",
+    "description": "Powered by AI that understands the language of your subconscious.",
+    "icon": "FaRegMoon",
+    "items": [
+      {
+        "title": "Dreams Analyzed",
+        "label": "50K+",
+        "description": "Interpretations"
+      },
+      {
+        "title": "Dream Symbols",
+        "label": "10,000+",
+        "description": "In Our Database"
+      },
+      {
+        "title": "Cultural Perspectives",
+        "label": "47",
+        "description": "Integrated"
+      },
+      {
+        "title": "User Satisfaction",
+        "label": "96%",
+        "description": "Accuracy Rating"
+      }
+    ]
+  },
+  "testimonial": {
+    "name": "testimonial",
+    "label": "Testimonial",
+    "title": "What Users Say About Ai Dream Scope",
+    "description": "Hear from users who have used Ai Dream Scope to interpret their dreams.",
+    "icon": "GoThumbsup",
+    "items": []
+  },
+  "faq": {
+    "name": "faq",
+    "label": "FAQ",
+    "title": "Frequently Asked Questions About AI Dream Interpretation",
+    "description": "Have another question? Contact our dream analysis experts via email or live chat.",
+    "items": [
+      {
+        "title": "How accurate is AI Dream Scope's dream interpretation compared to traditional methods?",
+        "description": "AI Dream Scope combines traditional dream interpretation knowledge with advanced AI pattern recognition for superior accuracy. While traditional dream dictionaries offer generic meanings, our AI analyzes your specific dream details, personal associations, and dream history to provide interpretations that are 85-95% more personalized and relevant to your life circumstances."
+      },
+      {
+        "title": "What does it mean when I have recurring dreams about certain symbols or situations?",
+        "description": "Recurring dreams typically indicate unresolved issues or important messages your subconscious is trying to communicate. Our dream meaning analysis identifies patterns across your dream journal and connects them with life events. The AI examines subtle variations in recurring dreams to track how your subconscious processing evolves over time, providing deeper insight than possible with single-dream analysis."
+      },
+      {
+        "title": "How does the World Map of Dreams feature enhance my dream interpretation experience?",
+        "description": "The World Map of Dreams shows how dream symbols are interpreted across different cultures and regions. This exclusive feature provides cultural context to your dream dictionary experience, revealing how your personal dream symbols might be influenced by global interpretations. You can explore regional dream patterns, compare your dreams with cultural archetypes, and gain multicultural perspectives that enrich your understanding of your subconscious mind."
+      },
+      {
+        "title": "Can AI Dream Scope help interpret specific types of dreams like falling, flying, or teeth falling out?",
+        "description": "Yes! Our system excels at analyzing common dream types that have specific psychological significance. Whether you're experiencing falling dreams (often related to insecurities), flying dreams (associated with freedom and control), or dreams about teeth falling out (frequently connected to anxiety about appearance or communication), our specialized interpretation modules provide detailed analysis for these and dozens of other specific dream scenarios."
+      },
+      {
+        "title": "Where does your Dream Dictionary source its interpretations and symbols?",
+        "description": "Our Dream Dictionary represents a unique fusion of human expertise and AI capabilities. This knowledge is integrated with our proprietary AI system that analyzes millions of dream reports and interpretations across cultures and time periods. The dictionary is continuously refined through both academic research and user feedback, ensuring interpretations remain both historically grounded and contemporarily relevant. Unlike static dream dictionaries, our system recognizes contextual nuances, personal associations, and evolving symbolic meanings, providing authoritative yet personalized dream symbol interpretations that bridge ancient wisdom with cutting-edge dream science."
+      },
+      {
+        "title": "How does AI Dream Scope protect the privacy of my dream interpretations and personal data?",
+        "description": "We take the privacy of your dream journal and interpretations extremely seriously. All dream content is protected with end-to-end encryption, ensuring your most intimate subconscious revelations remain private. We never share your specific dream details, personal interpretations, or dream analysis results with third parties. While anonymized patterns may contribute to improving our dream interpretation algorithms, this is done without any personally identifiable information. Our system is designed so even our own staff cannot access individual dream content without explicit permission, such as when providing technical support. You maintain complete control over your data with options to download your entire dream interpretation history or permanently delete it at any time. Our privacy-first approach means your dream symbols and meanings remain yours alone."
+      }
+    ]
+  },
+  "cta": {
+    "name": "cta",
+    "title": "Interpret Your Dream Now",
+    "buttons": [
+      {
+        "title": "Dream Interpretation",
+        "url": "/dream-interpretation",
+        "target": "_blank",
+        "icon": "GoArrowUpRight"
+      },
+      {
+        "title": "Record Dreams",
+        "url": "https://docs.Zitsaas.ai",
+        "target": "_blank",
+        "variant": "outline"
+      }
+    ]
+  }
+}

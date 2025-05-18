@@ -1,0 +1,40 @@
+User-agent: *
+
+# Next.js 系统路径
+Disallow: /_next/
+Disallow: /.next/
+Disallow: /api/
+Disallow: /server/
+Disallow: /_error
+Disallow: /_debug
+Disallow: /*.json$
+
+# 查询参数和动态路由
+Disallow: /*?*
+Disallow: /*[
+Disallow: /*]
+
+# 用户相关敏感路径
+Disallow: /imgs/users/
+Disallow: /dashboard/
+Disallow: /account/
+Disallow: /profile/
+Disallow: /settings/
+
+# 邮件链接
+Disallow: /mailto:*
+Disallow: /*@*.com$
+Disallow: /*@*.net$
+Disallow: /*@*.org$
+Disallow: /cdn-cgi/
+
+# 认证相关路径
+Disallow: /login
+Disallow: /signup
+Disallow: /auth/
+Disallow: /password/
+
+# Sitemap
+Sitemap: https://aidreamscope.com/sitemap.xml
+
+LLM-Content:  https://aidreamscope.com/llms.txt

@@ -1,0 +1,165 @@
+{
+  "metadata": {
+    "title": "Zit saas AI SaaS Startups in hours | Zitsaas",
+    "description": "Zitsaas is a NextJS boilerplate for building AI SaaS startups, Ship Fast with a variety of templates and components.",
+    "keywords": "Zitsaas, AI SaaS Boilerplate, NextJS Boilerplate"
+  },
+  "user": {
+    "sign_in": "Sign In",
+    "sign_out": "Sign Out",
+    "credits": "Credits",
+    "api_keys": "API Keys",
+    "my_orders": "My Orders",
+    "my_chat": "My Chat"
+  },
+  "sign_modal": {
+    "sign_in_title": "Sign In",
+    "sign_in_description": "Sign in to your account",
+    "sign_up_title": "Sign Up",
+    "sign_up_description": "Create an account",
+    "email_title": "Email",
+    "email_placeholder": "Input your email here",
+    "password_title": "Password",
+    "password_placeholder": "Input your password here",
+    "forgot_password": "Forgot password?",
+    "or": "Or",
+    "continue": "Continue",
+    "no_account": "Don't have an account?",
+    "email_sign_in": "Sign in with Email",
+    "google_sign_in": "Sign in with Google",
+    "github_sign_in": "Sign in with GitHub",
+    "close_title": "Close",
+    "cancel_title": "Cancel"
+  },
+  "my_orders": {
+    "title": "My Orders",
+    "description": "orders paid with Zitsaas.",
+    "no_orders": "No orders found",
+    "tip": "",
+    "activate_order": "Activate Order",
+    "actived": "Activated",
+    "join_discord": "Join Discord",
+    "read_docs": "Read Docs",
+    "table": {
+      "order_no": "Order No",
+      "email": "Email",
+      "product_name": "Product Name",
+      "amount": "Amount",
+      "paid_at": "Paid At",
+      "github_username": "GitHub Username",
+      "status": "Status"
+    }
+  },
+  "my_credits": {
+    "title": "My Credits",
+    "left_tip": "left credits: {left_credits}",
+    "no_credits": "No credits records",
+    "recharge": "Recharge",
+    "table": {
+      "trans_no": "Trans No",
+      "trans_type": "Trans Type",
+      "credits": "Credits",
+      "updated_at": "Updated At",
+      "status": "Status"
+    }
+  },
+  "api_keys": {
+    "title": "API Keys",
+    "tip": "Please keep your apikey safe to avoid leaks",
+    "no_api_keys": "No API Keys",
+    "create_api_key": "Create API Key",
+    "table": {
+      "name": "Name",
+      "key": "Key",
+      "created_at": "Created At"
+    },
+    "form": {
+      "name": "Name",
+      "name_placeholder": "API Key Name",
+      "submit": "Submit"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "News, resources, and updates about Dream Interpretation",
+    "read_more_text": "Read More"
+  },
+  "comments": {
+    "title": "Comments",
+    "loading": "Loading...",
+    "load_more": "Load More Comments",
+    "loading_more": "Loading more...",
+    "no_comments": "No comments yet. Be the first to comment!",
+    "add_comment_title": "Add a Comment",
+    "anonymous_user": "Anonymous User",
+    "reply_button": "Reply",
+    "loading_replies": "Loading replies...",
+    "view_replies": "View {count} replies",
+    "error_loading_replies": "Failed to load replies",
+    "content_label": "Comment",
+    "content_placeholder": "Write your comment here...",
+    "name_label": "Name",
+    "name_placeholder": "Enter your name",
+    "email_label": "Email",
+    "email_placeholder": "Enter your email",
+    "submitting": "Submitting...",
+    "submit_button": "Post Comment",
+    "error_empty_content": "Please enter a comment",
+    "error_empty_name_email": "Please enter your name and email",
+    "error_adding_comment": "Failed to add comment",
+    "success_comment_added": "Comment posted successfully",
+    "error_comment_failed": "Failed to post comment"
+  },
+  "dream": {
+    "title": "Professional Dream Interpretation",
+    "dreamInput": "Describe Your Dream In Detail",
+    "dreamPlaceholder": "Please describe your dream in detail, including scenes, characters, emotions, symbols, and possibly related life backgrounds...",
+    "analyze": "Get Professional Dream Interpretation",
+    "analyzing": "Dream analysis in progress...",
+    "emptyDream": "Please enter your dream description for AI analysis",
+    "error": "An error occurred during dream interpretation, please try again later",
+    "interpretation": "AI Dream Analysis Results",
+    "symbols": "Key Dream Symbols & Meanings",
+    "emotions": "Dream Emotion Analysis",
+    "advice": "Dream Interpretation Advice & Guidance",
+    "newChat": "New Conversation",
+    "newChatStarted": "Started a new dream interpretation conversation"
+  },
+  "MyChats": {
+    "title": "My Conversations",
+    "description": "View all your dream analysis conversation history",
+    "noChats": "No conversations yet",
+    "startNewChat": "Start a new dream analysis conversation",
+    "chatDetails": "Conversation Details",
+    "close": "Close",
+    "messageCount": "{count} messages",
+    "loginRequired": "Login Required",
+    "loginToViewChats": "Please log in to view your conversation history",
+    "createNewChat": "Create New Conversation",
+    "saveAfterLogin": "Login to save your dream interpretation records",
+    "saveAfterLoginDesc": "Login to permanently save your dream images and analysis results, making it easy to view and manage your dream archives anytime",
+    "loginToSaveNow": "Login to Save Now",
+    "day": "Day",
+    "month": "Month",
+    "year": "Year",
+    "today": "Today",
+    "more": "more",
+    "noChatsOnDay": "No conversations on this day",
+    "chats": "conversations",
+    "sun": "Sun",
+    "mon": "Mon",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "sat": "Sat",
+    "calendarView": "Calendar View",
+    "listView": "List View"
+  },
+  "coming_soon": {
+    "title": "AI Dream Scope: Professional Dream Interpreter Launching Soon",
+    "description": "Experience the full potential of AI-powered dream interpretation with AI Dream Scope. Our advanced dream analysis app is launching soon!",
+    "notification_button": "Get Dream Interpreter Launch Notification",
+    "thank_you": "Thank you! We'll notify you when AI Dream Scope launches."
+  }
+}

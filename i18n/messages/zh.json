@@ -1,0 +1,165 @@
+{
+  "metadata": {
+    "title": "几小时内构建任何 AI SaaS 创业项目 | Zitsaas",
+    "description": "Zitsaas 是一个用于构建 AI SaaS 创业项目的 NextJS 模板，提供各种模板和组件，帮助您快速启动。",
+    "keywords": "Zitsaas, AI SaaS 模板, NextJS 模板"
+  },
+  "user": {
+    "sign_in": "登录",
+    "sign_out": "退出登录",
+    "credits": "额度",
+    "api_keys": "API 密钥",
+    "my_orders": "我的订单",
+    "my_chat": "我的对话"
+  },
+  "sign_modal": {
+    "sign_in_title": "登录",
+    "sign_in_description": "登录您的账户",
+    "sign_up_title": "注册",
+    "sign_up_description": "创建新账户",
+    "email_title": "邮箱",
+    "email_placeholder": "请输入您的邮箱",
+    "password_title": "密码",
+    "password_placeholder": "请输入您的密码",
+    "forgot_password": "忘记密码？",
+    "or": "或",
+    "continue": "继续",
+    "no_account": "还没有账户？",
+    "email_sign_in": "使用邮箱登录",
+    "google_sign_in": "使用 Google 登录",
+    "github_sign_in": "使用 GitHub 登录",
+    "close_title": "关闭",
+    "cancel_title": "取消"
+  },
+  "my_orders": {
+    "title": "我的订单",
+    "description": "在 Zitsaas 上购买的订单。",
+    "no_orders": "未找到订单",
+    "tip": "",
+    "activate_order": "激活订单",
+    "actived": "已激活",
+    "join_discord": "加入 Discord",
+    "read_docs": "阅读文档",
+    "table": {
+      "order_no": "订单号",
+      "email": "邮箱",
+      "product_name": "产品名称",
+      "amount": "金额",
+      "paid_at": "支付时间",
+      "github_username": "GitHub 用户名",
+      "status": "状态"
+    }
+  },
+  "my_credits": {
+    "title": "我的积分",
+    "left_tip": "剩余积分: {left_credits}",
+    "no_credits": "没有积分记录",
+    "recharge": "充值",
+    "table": {
+      "trans_no": "交易号",
+      "trans_type": "交易类型",
+      "credits": "积分",
+      "updated_at": "更新时间",
+      "status": "状态"
+    }
+  },
+  "api_keys": {
+    "title": "API 密钥",
+    "tip": "请妥善保管您的 API 密钥，避免泄露",
+    "no_api_keys": "没有 API 密钥",
+    "create_api_key": "创建 API 密钥",
+    "table": {
+      "name": "名称",
+      "key": "密钥",
+      "created_at": "创建时间"
+    },
+    "form": {
+      "name": "名称",
+      "name_placeholder": "API 密钥名称",
+      "submit": "提交"
+    }
+  },
+  "blog": {
+    "title": "博客",
+    "description": "关于 Zitsaas 的新闻、资源和更新",
+    "read_more_text": "阅读更多"
+  },
+  "comments": {
+    "title": "评论",
+    "loading": "加载中...",
+    "load_more": "加载更多评论",
+    "loading_more": "加载中...",
+    "no_comments": "暂无评论，快来发表第一条评论吧！",
+    "add_comment_title": "发表评论",
+    "anonymous_user": "匿名用户",
+    "reply_button": "回复",
+    "loading_replies": "加载回复中...",
+    "view_replies": "查看 {count} 条回复",
+    "error_loading_replies": "加载回复失败",
+    "content_label": "评论内容",
+    "content_placeholder": "请输入您的评论...",
+    "name_label": "姓名",
+    "name_placeholder": "请输入您的姓名",
+    "email_label": "邮箱",
+    "email_placeholder": "请输入您的邮箱",
+    "submitting": "提交中...",
+    "submit_button": "发布评论",
+    "error_empty_content": "请输入评论内容",
+    "error_empty_name_email": "请输入姓名和邮箱",
+    "error_adding_comment": "添加评论失败",
+    "success_comment_added": "评论发布成功",
+    "error_comment_failed": "评论发布失败"
+  },
+  "dream": {
+    "title": "AI专业梦境解析与解读",
+    "dreamInput": "详细描述您的梦境",
+    "dreamPlaceholder": "请详细描述您的梦境内容，包括场景、人物、情感、符号和可能相关的生活背景...",
+    "analyze": "获取专业梦境解读",
+    "analyzing": "正在进行梦境解析中...",
+    "emptyDream": "请输入您的梦境描述以进行AI解析",
+    "error": "梦境解读过程中出现错误，请稍后重试",
+    "interpretation": "AI梦境解析结果",
+    "symbols": "梦境关键符号与象征意义",
+    "emotions": "梦境情感分析",
+    "advice": "梦境解读建议与指导",
+    "newChat": "新的对话",
+    "newChatStarted": "已开始新的梦境解读对话"
+  },
+  "MyChats": {
+    "title": "我的对话",
+    "description": "查看所有梦境解析对话历史",
+    "noChats": "暂无对话记录",
+    "startNewChat": "开始新的梦境解析对话",
+    "chatDetails": "对话详情",
+    "close": "关闭",
+    "messageCount": "{count} 条消息",
+    "loginRequired": "需要登录",
+    "loginToViewChats": "请登录以查看您的对话历史",
+    "createNewChat": "创建新对话",
+    "saveAfterLogin": "登录以保存您的梦境解析记录",
+    "saveAfterLoginDesc": "登录后可永久保存您的梦境图像和分析结果，方便随时查看和管理您的梦境档案",
+    "loginToSaveNow": "立即登录并保存",
+    "day": "日",
+    "month": "月",
+    "year": "年",
+    "today": "今天",
+    "more": "更多",
+    "noChatsOnDay": "这一天没有对话记录",
+    "chats": "对话",
+    "sun": "日",
+    "mon": "一",
+    "tue": "二",
+    "wed": "三",
+    "thu": "四",
+    "fri": "五",
+    "sat": "六",
+    "calendarView": "日历视图",
+    "listView": "列表视图"
+  },
+  "coming_soon": {
+    "title": "AI Dream Scope梦境解析器：即将上线",
+    "description": "体验AI驱动的专业梦境解读与分析的全部潜力。我们的梦境解析应用即将推出！",
+    "notification_button": "获取梦境解析器上线通知",
+    "thank_you": "谢谢！我们将在AI Dream Scope梦境解析器上线时通知您。"
+  }
+}

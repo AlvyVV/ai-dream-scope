@@ -1,0 +1,29 @@
+{
+  "brand": {
+    "title": "Ai Dream Scope",
+    "logo": {
+      "src": "/imgs/logo.webp",
+      "alt": "Ai Dream Scope"
+    },
+    "url": "/"
+  },
+  "nav": {
+    "items": [
+      {
+        "title": "Intérprete de Sueños",
+        "url": "/dream-interpreter"
+      },
+      {
+        "title": "Diccionario de Sueños",
+        "url": "/dream-dictionary"
+      },
+      {
+        "title": "Blogs",
+        "url": "/blogs"
+      }
+    ]
+  },
+  "show_sign": true,
+  "show_theme": false,
+  "show_locale": true
+}

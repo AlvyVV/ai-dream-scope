@@ -1,0 +1,120 @@
+{
+  "name": "footer",
+  "brand": {
+    "description": "Ai Dream Scope is a dream dictionary and interpretation platform powered by AI.",
+    "logo": {
+      "src": "/imgs/logo.webp",
+      "alt": "Ai Dream Scope"
+    },
+    "url": "/"
+  },
+  "copyright": "© 2025 • Ai Dream Scope All rights reserved.",
+  "nav": {
+    "items": [
+      {
+        "title": "About",
+        "children": [
+          {
+            "title": "About Us",
+            "url": "/about-us",
+            "target": "_blank"
+          },
+          {
+            "title": "Dream Interpreter",
+            "url": "/dream-interpreter",
+            "target": "_self"
+          },
+          {
+            "title": "Common Symbols",
+            "url": "/#commonSymbols",
+            "target": "_self"
+          },
+          {
+            "title": "Dream Dictionary",
+            "url": "/dream-dictionary",
+            "target": "_self"
+          }
+        ]
+      },
+      {
+        "title": "Hot Symbols Categories",
+        "children": [
+          {
+            "title": "Animals",
+            "url": "/dream-dictionary-category/animals",
+            "target": "_self"
+          },
+          {
+            "title": "Relationships",
+            "url": "/dream-dictionary-category/relationships",
+            "target": "_self"
+          },
+          {
+            "title": "Objects",
+            "url": "/dream-dictionary-category/objects",
+            "target": "_self"
+          }
+        ]
+      },
+      {
+        "title": "Friends",
+        "children": [
+          {
+            "title": "AiHubs",
+            "url": "https://aihubs.ai/",
+            "target": "_blank"
+          },
+          {
+            "title": "Buzzmatic",
+            "url": "https://form.buzzmatic.net/",
+            "target": "_blank"
+          },
+          {
+            "title": "ToolsFine",
+            "url": "https://toolsfine.com",
+            "target": "_blank"
+          },
+          {
+            "title": "Resources",
+            "url": "/resources",
+            "target": "_blank"
+          }
+        ]
+      }
+    ]
+  },
+  "social": {
+    "items": [
+      {
+        "title": "X",
+        "icon": "RiTwitterXFill",
+        "url": "https://x.com/AiDreamScope",
+        "target": "_blank"
+      },
+      {
+        "title": "Instagram",
+        "icon": "RiInstagramFill",
+        "url": "https://www.instagram.com/aidreamscope",
+        "target": "_blank"
+      },
+      {
+        "title": "Email",
+        "icon": "RiMailLine",
+        "url": "mailto:info@aidreamscope.com",
+        "target": "_self"
+      }
+    ]
+  },
+  "agreement": {
+    "items": [
+      {
+        "title": "Privacy Policy",
+        "url": "/privacy-policy"
+      },
+      {
+        "title": "Terms of Service",
+        "url": "/terms-of-service"
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+:root {
+  /* 主背景 - 梦幻浅灰蓝 */
+  --background: 240 20% 98%;
+  --foreground: 254 15% 10%;
+  
+  /* 卡片 - 轻微浅蓝调 */
+  --card: 240 15% 95%;
+  --card-foreground: 254 15% 15%;
+  
+  /* 弹出窗口 */
+  --popover: 240 20% 98%;
+  --popover-foreground: 254 15% 10%;
+  
+  /* 主色调 - 深梦境紫 */
+  --primary: 260 55% 50%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* 次要色调 - 浅梦幻蓝 */
+  --secondary: 220 70% 77%;
+  --secondary-foreground: 254 30% 15%;
+  
+  /* 柔和元素 */
+  --muted: 240 10% 85%;
+  --muted-foreground: 254 10% 40%;
+  
+  /* 强调色 - 淡梦境紫 */
+  --accent: 260 70% 85%;
+  --accent-foreground: 254 30% 15%;
+  
+  /* 警示色 - 温和警示橙 */
+  --destructive: 25 100% 68%;
+  --destructive-foreground: 254 30% 15%;
+  
+  /* 边框与输入 */
+  --border: 254 15% 85%;
+  --input: 254 15% 85%;
+  --ring: 260 55% 50%;
+  
+  --radius: 1rem;
+}
+
+.dark {
+  /* 主背景 - 深空蓝 */
+  --background: 250 30% 12%;
+  --foreground: 240 10% 95%;
+  
+  /* 卡片 - 深夜蓝 */
+  --card: 250 35% 15%;
+  --card-foreground: 240 10% 95%;
+  
+  /* 弹出窗口 */
+  --popover: 250 30% 10%;
+  --popover-foreground: 240 10% 95%;
+  
+  /* 主色调 - 保持品牌一致性 */
+  --primary: 260 55% 50%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* 次要色调 - 深蓝紫 */
+  --secondary: 250 30% 25%;
+  --secondary-foreground: 0 0% 100%;
+  
+  /* 柔和元素 */
+  --muted: 250 20% 20%;
+  --muted-foreground: 240 10% 65%;
+  
+  /* 强调色 - 暗色模式下的淡梦境紫 */
+  --accent: 260 60% 75%;
+  --accent-foreground: 240 10% 95%;
+  
+  /* 警示色 */
+  --destructive: 25 90% 60%;
+  --destructive-foreground: 240 10% 95%;
+  
+  /* 边框与输入 */
+  --border: 250 20% 30%;
+  --input: 250 20% 30%;
+  --ring: 260 55% 50%;
+  
+  --radius: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}

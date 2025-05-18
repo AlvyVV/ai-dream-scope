@@ -1,0 +1,165 @@
+{
+  "metadata": {
+    "title": "Ai Dream Scope - Interpretación de Sueños con IA",
+    "description": "Ai Dream Scope es una plataforma de diccionario e interpretación de sueños impulsada por IA.",
+    "keywords": "interpretación de sueños, diccionario de sueños, AI, análisis de sueños"
+  },
+  "user": {
+    "sign_in": "Iniciar Sesión",
+    "sign_out": "Cerrar Sesión",
+    "credits": "Créditos",
+    "api_keys": "Claves API",
+    "my_orders": "Mis Pedidos",
+    "my_chat": "Mis Conversaciones"
+  },
+  "sign_modal": {
+    "sign_in_title": "Iniciar Sesión",
+    "sign_in_description": "Inicia sesión en tu cuenta",
+    "sign_up_title": "Registrarse",
+    "sign_up_description": "Crear una cuenta",
+    "email_title": "Correo electrónico",
+    "email_placeholder": "Ingresa tu correo electrónico aquí",
+    "password_title": "Contraseña",
+    "password_placeholder": "Ingresa tu contraseña aquí",
+    "forgot_password": "¿Olvidó su contraseña?",
+    "or": "O",
+    "continue": "Continuar",
+    "no_account": "¿No tienes una cuenta?",
+    "email_sign_in": "Iniciar sesión con correo electrónico",
+    "google_sign_in": "Iniciar sesión con Google",
+    "github_sign_in": "Iniciar sesión con GitHub",
+    "close_title": "Cerrar",
+    "cancel_title": "Cancelar"
+  },
+  "my_orders": {
+    "title": "Mis Pedidos",
+    "description": "pedidos pagados con Ai Dream Scope.",
+    "no_orders": "No se encontraron pedidos",
+    "tip": "",
+    "activate_order": "Activar Pedido",
+    "actived": "Activado",
+    "join_discord": "Unirse a Discord",
+    "read_docs": "Leer Documentos",
+    "table": {
+      "order_no": "N° de Pedido",
+      "email": "Correo Electrónico",
+      "product_name": "Nombre del Producto",
+      "amount": "Monto",
+      "paid_at": "Pagado El",
+      "github_username": "Nombre de Usuario GitHub",
+      "status": "Estado"
+    }
+  },
+  "my_credits": {
+    "title": "Mis Créditos",
+    "left_tip": "créditos restantes: {left_credits}",
+    "no_credits": "Sin registros de créditos",
+    "recharge": "Recargar",
+    "table": {
+      "trans_no": "N° de Transacción",
+      "trans_type": "Tipo de Transacción",
+      "credits": "Créditos",
+      "updated_at": "Actualizado El",
+      "status": "Estado"
+    }
+  },
+  "api_keys": {
+    "title": "Claves API",
+    "tip": "Por favor, mantén tu clave API segura para evitar filtraciones",
+    "no_api_keys": "Sin Claves API",
+    "create_api_key": "Crear Clave API",
+    "table": {
+      "name": "Nombre",
+      "key": "Clave",
+      "created_at": "Creado El"
+    },
+    "form": {
+      "name": "Nombre",
+      "name_placeholder": "Nombre de la Clave API",
+      "submit": "Enviar"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Noticias, recursos y actualizaciones sobre Interpretación de Sueños",
+    "read_more_text": "Leer Más"
+  },
+  "comments": {
+    "title": "Comentarios",
+    "loading": "Cargando...",
+    "load_more": "Cargar Más Comentarios",
+    "loading_more": "Cargando más...",
+    "no_comments": "Aún no hay comentarios. ¡Sé el primero en comentar!",
+    "add_comment_title": "Añadir un Comentario",
+    "anonymous_user": "Usuario Anónimo",
+    "reply_button": "Responder",
+    "loading_replies": "Cargando respuestas...",
+    "view_replies": "Ver {count} respuestas",
+    "error_loading_replies": "Error al cargar respuestas",
+    "content_label": "Comentario",
+    "content_placeholder": "Escribe tu comentario aquí...",
+    "name_label": "Nombre",
+    "name_placeholder": "Ingresa tu nombre",
+    "email_label": "Correo Electrónico",
+    "email_placeholder": "Ingresa tu correo electrónico",
+    "submitting": "Enviando...",
+    "submit_button": "Publicar Comentario",
+    "error_empty_content": "Por favor, escribe un comentario",
+    "error_empty_name_email": "Por favor, ingresa tu nombre y correo electrónico",
+    "error_adding_comment": "Error al añadir comentario",
+    "success_comment_added": "Comentario publicado exitosamente",
+    "error_comment_failed": "Error al publicar comentario"
+  },
+  "dream": {
+    "title": "Interpretación Profesional de Sueños",
+    "dreamInput": "Describe Tu Sueño en Detalle",
+    "dreamPlaceholder": "Por favor, describe tu sueño en detalle, incluyendo escenas, personajes, emociones, símbolos y posiblemente antecedentes de vida relacionados...",
+    "analyze": "Obtener Interpretación Profesional de Sueño",
+    "analyzing": "Análisis de sueño en progreso...",
+    "emptyDream": "Por favor, ingresa la descripción de tu sueño para el análisis con IA",
+    "error": "Ocurrió un error durante la interpretación del sueño, por favor intenta nuevamente más tarde",
+    "interpretation": "Resultados del Análisis de Sueño con IA",
+    "symbols": "Símbolos Clave del Sueño y Significados",
+    "emotions": "Análisis de Emociones del Sueño",
+    "advice": "Consejos y Orientación de la Interpretación del Sueño",
+    "newChat": "Nueva Conversación",
+    "newChatStarted": "Se ha iniciado una nueva conversación de interpretación de sueños"
+  },
+  "MyChats": {
+    "title": "Mis Conversaciones",
+    "description": "Ver todo el historial de conversaciones de análisis de sueños",
+    "noChats": "Aún no hay conversaciones",
+    "startNewChat": "Iniciar una nueva conversación de análisis de sueños",
+    "chatDetails": "Detalles de la Conversación",
+    "close": "Cerrar",
+    "messageCount": "{count} mensajes",
+    "loginRequired": "Inicio de Sesión Requerido",
+    "loginToViewChats": "Por favor, inicia sesión para ver tu historial de conversaciones",
+    "createNewChat": "Crear Nueva Conversación",
+    "saveAfterLogin": "Inicia sesión para guardar tus registros de interpretación de sueños",
+    "saveAfterLoginDesc": "Inicia sesión para guardar permanentemente tus imágenes de sueños y resultados de análisis, facilitando la visualización y gestión de tus archivos de sueños en cualquier momento",
+    "loginToSaveNow": "Iniciar Sesión para Guardar Ahora",
+    "day": "Día",
+    "month": "Mes",
+    "year": "Año",
+    "today": "Hoy",
+    "more": "más",
+    "noChatsOnDay": "No hay conversaciones en este día",
+    "chats": "conversaciones",
+    "sun": "Dom",
+    "mon": "Lun",
+    "tue": "Mar",
+    "wed": "Mié",
+    "thu": "Jue",
+    "fri": "Vie",
+    "sat": "Sáb",
+    "calendarView": "Vista de Calendario",
+    "listView": "Vista de Lista"
+  },
+  "coming_soon": {
+    "title": "AI Dream Scope: Intérprete Profesional de Sueños Próximamente",
+    "description": "Experimenta todo el potencial de la interpretación de sueños potenciada por IA con AI Dream Scope. ¡Nuestra avanzada aplicación de análisis de sueños se lanzará pronto!",
+    "notification_button": "Recibir Notificación del Lanzamiento",
+    "thank_you": "¡Gracias! Te notificaremos cuando se lance AI Dream Scope."
+  }
+}
