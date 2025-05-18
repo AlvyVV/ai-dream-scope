@@ -7,7 +7,7 @@ export interface ItemConfig {
   /**
    * 语言代码
    */
-  locale: string;
+  locale?: string;
 
   /**
    * 项目 ID
@@ -32,7 +32,7 @@ export interface ItemConfig {
   /**
    * 名称
    */
-  name: string;
+  name?: string;
 
   /**
    * 分类ID

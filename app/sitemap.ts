@@ -1,16 +1,16 @@
 import { getCategoriesByLocale } from '@/models/category';
-import { getAllItemConfigs } from '@/models/item-config';
+import { getAllSimpleItemConfigs } from '@/models/item-config';
 import type { MetadataRoute } from 'next';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 获取所有项目配置
-  const itemConfigs = await getAllItemConfigs(1, 1000);
+  const itemConfigs = await getAllSimpleItemConfigs(1, 1000);
   // 获取所有项目配置
-  const itemConfigs2 = await getAllItemConfigs(2, 1000);
+  const itemConfigs2 = await getAllSimpleItemConfigs(2, 1000);
   // 获取所有项目配置
-  const itemConfigs3 = await getAllItemConfigs(3, 1000);
+  const itemConfigs3 = await getAllSimpleItemConfigs(3, 1000);
   // 获取所有项目配置
-  const itemConfigs4 = await getAllItemConfigs(4, 1000);
+  const itemConfigs4 = await getAllSimpleItemConfigs(4, 1000);
 
   // 基础 URL
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aidreamscope.com';

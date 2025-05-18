@@ -151,6 +151,34 @@ export async function getAllItemConfigs(page: number = 1, limit: number = 100): 
 }
 
 /**
+ * 获取所有项目配置(分页)
+ * @param page 页码
+ * @param limit 每页记录数
+ * @returns 项目配置列表
+ */
+export async function getAllSimpleItemConfigs(page: number = 1, limit: number = 100): Promise<ItemConfig[]> {
+  try {
+    const supabase = await getAdminSupabaseClient();
+    const { data, error } = await supabase
+      .from(tableName)
+      .select('code,created_at')
+      .order('created_at', { ascending: false })
+      .range((page - 1) * limit, page * limit - 1);
+
+    if (error) {
+      console.error('DB: 获取所有项目配置失败:', error);
+      throw error;
+    }
+
+    console.log('DB: 成功获取项目配置, 数量:', data?.length || 0);
+    return data || [];
+  } catch (error) {
+    console.error('DB: 获取项目配置异常:', error);
+    return [];
+  }
+}
+
+/**
  * 获取指定语言下项目配置的总数
  * @param locale 语言代码
  * @returns 项目配置总数
