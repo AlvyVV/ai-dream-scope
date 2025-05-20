@@ -1,0 +1,85 @@
+{
+  "theme": "light",
+  "meta": {
+    "title": "AI Dream Interpreter: Get Free & Professional Dream Analysis Online",
+    "description": "Get instant and personalized dream interpretations with our free AI-powered tool. Explore a global database of dream symbols and unlock the hidden meanings behind your dreams."
+  },
+  "header": true,
+  "dream_interpreter": {
+    "title": "AI Dream Scope Dream Interpreter",
+    "subtitle": "Uncover the Hidden Meanings in Your Dreams with Our Free AI Tool",
+    "description": "Explore the depths of your subconscious mind. Our advanced AI Dream Interpretation technology helps you understand hidden messages, emotions, and symbolic meanings in your dreams, unlocking insights for your waking life.",
+    "icon": "Moon"
+  },
+  "features": {
+    "title": "What Users Say About AI Dream Scope Interpretation",
+    "cards": [
+      {
+        "title": "AI Dream Analysis",
+        "description": "Advanced AI technology analyzes symbols, scenes, and emotions in your dreams, revealing their hidden meanings",
+        "icon": "Brain"
+      },
+      {
+        "title": "Professional Dream Interpretation",
+        "description": "Get personalized professional interpretation and practical advice for your unique dreams, helping you better understand yourself",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Global Dream Database",
+        "description": "Connect with the AI Dream Scope global community and explore dream symbols and universal language across different cultures",
+        "icon": "Globe"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "User Experiences",
+    "items": [
+      {
+        "name": "James",
+        "location": "Tokyo",
+        "description": "I was really struggling with these recurring falling dreams - they were driving me crazy! The AI analysis was eye-opening. It helped me realize they were connected to my anxiety about a big project at work. Now I actually feel more in control. Way better than those generic dream meaning websites!",
+        "image": "/imgs/users/James.webp",
+        "variant": "purple"
+      },
+      {
+        "name": "Ruby",
+        "location": "London",
+        "description": "Honestly? I thought this was going to be another gimmicky AI thing. But when it analyzed my wedding dreams, it picked up on anxieties about commitment I didn't even realize I had. My therapist was impressed when I brought it up - it really helped move our sessions forward.",
+        "image": "/imgs/users/Ruby.webp",
+        "variant": "blue"
+      },
+      {
+        "name": "Ben",
+        "location": "Sydney",
+        "description": "Been keeping a dream journal for 3+ years, and this tool is something else. It spotted patterns across months of entries that completely flew over my head. Turns out my dreams about locked doors were all tied to my fear of opening up in relationships. Pretty mind-blowing stuff.",
+        "image": "/imgs/users/Ben.webp",
+        "variant": "pink"
+      },
+      {
+        "name": "Ella",
+        "location": "Paris",
+        "description": "Started using this after my grandfather passed away. He kept appearing in my dreams, and I couldn't understand why some felt peaceful while others left me upset. The AI helped me see these dreams were actually about unresolved conversations. It's been really healing.",
+        "image": "/imgs/users/Ella.webp",
+        "variant": "amber"
+      },
+      {
+        "name": "Neil",
+        "location": "Berlin",
+        "description": "The accuracy is wild! I kept having dreams about being on boats in stormy water - turns out it wasn't random at all. The AI connected it to my uncertainty about switching careers. That interpretation gave me the push I needed to finally make the jump to a new industry.",
+        "image": "/imgs/users/Neil.webp",
+        "variant": "default"
+      },
+      {
+        "name": "Aurora",
+        "location": "SLC",
+        "description": "This app is like having a dream expert in your pocket! I had this weird recurring dream about flying but always getting stuck. The AI helped me understand it was about feeling held back in my creative projects. Since then, I've actually started taking more risks with my art.",
+        "image": "/imgs/users/Aurora.webp",
+        "variant": "default"
+      }
+    ]
+  },
+  "global_dream_database": {
+    "title": "AI Dream Scope Global Dream Database",
+    "description": "Explore dream data collected by AI Dream Scope worldwide, understanding dream symbols and meanings across different cultures and regions."
+  }
+}
