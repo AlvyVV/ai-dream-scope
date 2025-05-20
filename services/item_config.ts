@@ -114,7 +114,7 @@ export async function findItemsByName(name: string, locale?: string, page: numbe
 
     // 根据name长度排序，越短排越前面
     console.log('对结果按名称长度进行排序');
-    const sortedResults = results.sort((a, b) => a.name.length - b.name.length);
+    const sortedResults = results.sort((a, b) => (a.name?.length || 0) - (b.name?.length || 0));
 
     return sortedResults;
   } catch (error) {

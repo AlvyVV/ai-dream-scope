@@ -34,7 +34,7 @@ export default function SymbolsAlphabetList({ symbols, categoryName = '' }: Symb
 
     // Sort symbols within each letter group alphabetically by name
     Object.keys(result).forEach(letter => {
-      result[letter].sort((a, b) => a.name.localeCompare(b.name));
+      result[letter].sort((a, b) => a.name?.localeCompare(b.name ?? '') || 0);
     });
 
     return result;
@@ -85,11 +85,11 @@ export default function SymbolsAlphabetList({ symbols, categoryName = '' }: Symb
             <div className="grid grid-cols-2 gap-x-8 gap-y-2 md:grid-cols-3 lg:grid-cols-4">
               {symbolsByLetter[letter].map((symbol, index) => (
                 <Link
-                  key={index + symbol.name}
+                  key={index + (symbol.name ?? '')}
                   href={`/dream-dictionary/${symbol.code}`}
                   className="flex items-center rounded-lg px-3 py-2.5 transition-all duration-200 hover:bg-purple-50 hover:text-purple-700 dark:hover:bg-purple-900/20 dark:hover:text-purple-400 border border-transparent hover:border-purple-200 dark:hover:border-purple-800/50 hover:shadow-sm group"
                 >
-                  <span className="text-sm font-medium tracking-wide group-hover:translate-x-0.5 transition-transform duration-200">{symbol.name}</span>
+                  <span className="text-sm font-medium tracking-wide group-hover:translate-x-0.5 transition-transform duration-200">{symbol.name ?? ''}</span>
                   {/* {symbol.img && <Image src={symbol.img} alt={symbol.name} width={40} height={40} />} */}
                 </Link>
               ))}
