@@ -1,9 +1,6 @@
 import { getThreadImageUrl } from '@/models/user-ai-chat';
 import { NextRequest, NextResponse } from 'next/server';
 
-
-export const runtime = "edge";
-
 export async function GET(request: NextRequest) {
   try {
     // 获取查询参数

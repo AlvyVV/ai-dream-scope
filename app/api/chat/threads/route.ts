@@ -3,9 +3,6 @@ import { getAdminSupabaseClient } from '@/models/db';
 import { findUserAiChatsByThreadId } from '@/models/user-ai-chat';
 import { NextRequest, NextResponse } from 'next/server';
 
-
-export const runtime = "edge";
-
 export async function GET(req: NextRequest) {
   try {
     // 获取当前认证用户

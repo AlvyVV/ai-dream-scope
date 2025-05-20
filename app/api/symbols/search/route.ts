@@ -1,8 +1,5 @@
-import { NextResponse } from 'next/server';
 import { findItemsByName } from '@/services/item_config';
-
-
-export const runtime = "edge";
+import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
   try {

@@ -8,9 +8,6 @@ import { Order } from '@/types/order';
 import { getSnowId } from '@/lib/hash';
 import { findUserByUuid } from '@/models/user';
 
-
-export const runtime = "edge";
-
 export async function POST(req: Request) {
   try {
     let { credits, currency, amount, interval, product_id, product_name, valid_months, cancel_url } = await req.json();

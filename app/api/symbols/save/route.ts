@@ -2,9 +2,6 @@ import { createItemConfig } from '@/services/item_config';
 import { ItemConfig } from '@/types/item-config';
 import { NextRequest, NextResponse } from 'next/server';
 
-
-export const runtime = "edge";
-
 export async function POST(request: NextRequest) {
   try {
     console.log('保存符号API: 开始处理请求');
@@ -19,10 +16,7 @@ export async function POST(request: NextRequest) {
 
     if (missingFields.length > 0) {
       console.error('保存符号API: 缺少必要字段', missingFields);
-      return NextResponse.json(
-        { message: `缺少必要字段: ${missingFields.join(', ')}` },
-        { status: 400 }
-      );
+      return NextResponse.json({ message: `缺少必要字段: ${missingFields.join(', ')}` }, { status: 400 });
     }
 
     // 确保ID值来自环境变量
@@ -52,9 +46,6 @@ export async function POST(request: NextRequest) {
     console.error('符号配置保存API错误:', error);
     const errorMessage = error instanceof Error ? error.message : '未知错误';
 
-    return NextResponse.json(
-      { success: false, message: `符号配置保存失败: ${errorMessage}` },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, message: `符号配置保存失败: ${errorMessage}` }, { status: 500 });
   }
 }

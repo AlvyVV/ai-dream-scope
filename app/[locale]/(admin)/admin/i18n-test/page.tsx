@@ -1,16 +1,10 @@
 import TestTranslation from '@/components/blocks/i18n/test-translation';
 
-
-export const runtime = "edge";
-
 export default function TranslationTestPage() {
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-2xl font-bold mb-6">多语言翻译测试</h1>
-      <p className="mb-6 text-gray-600">
-        使用此页面测试多语言翻译功能。您可以输入JSON内容并测试翻译结果，确保Google API
-        密钥正确配置且翻译服务正常工作。
-      </p>
+      <p className="mb-6 text-gray-600">使用此页面测试多语言翻译功能。您可以输入JSON内容并测试翻译结果，确保Google API 密钥正确配置且翻译服务正常工作。</p>
 
       <div className="bg-white rounded-lg shadow">
         <TestTranslation />

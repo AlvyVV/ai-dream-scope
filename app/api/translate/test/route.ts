@@ -1,9 +1,6 @@
 import { translateToMultipleLanguages } from '@/services/object-translator';
 import { NextRequest, NextResponse } from 'next/server';
 
-
-export const runtime = "edge";
-
 /**
  * 测试翻译服务的API
  */

@@ -1,8 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
 import { getCommentReplies } from '@/models/comment';
-
-
-export const runtime = "edge";
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(req: NextRequest) {
   try {
@@ -25,9 +22,6 @@ export async function GET(req: NextRequest) {
   } catch (error: any) {
     console.error('获取评论回复API错误:', error);
 
-    return NextResponse.json(
-      { error: `获取评论回复失败: ${error.message || '未知错误'}` },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: `获取评论回复失败: ${error.message || '未知错误'}` }, { status: 500 });
   }
 }

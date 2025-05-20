@@ -1,16 +1,13 @@
-import { ApikeyStatus, insertApikey } from "@/models/apikey";
+import { ApikeyStatus, insertApikey } from '@/models/apikey';
 
-import { Apikey } from "@/types/apikey";
-import Empty from "@/components/blocks/empty";
-import FormSlot from "@/components/console/slots/form";
-import { Form as FormSlotType } from "@/types/slots/form";
-import { getIsoTimestr } from "@/lib/time";
-import { getNonceStr } from "@/lib/hash";
-import { getTranslations } from "next-intl/server";
-import { getUserUuid } from "@/services/user";
-
-
-export const runtime = "edge";
+import Empty from '@/components/blocks/empty';
+import FormSlot from '@/components/console/slots/form';
+import { getNonceStr } from '@/lib/hash';
+import { getIsoTimestr } from '@/lib/time';
+import { getUserUuid } from '@/services/user';
+import { Apikey } from '@/types/apikey';
+import { Form as FormSlotType } from '@/types/slots/form';
+import { getTranslations } from 'next-intl/server';
 
 export default async function () {
   const t = await getTranslations();
@@ -21,25 +18,25 @@ export default async function () {
   }
 
   const form: FormSlotType = {
-    title: t("api_keys.create_api_key"),
+    title: t('api_keys.create_api_key'),
     crumb: {
       items: [
         {
-          title: t("api_keys.title"),
-          url: "/api-keys",
+          title: t('api_keys.title'),
+          url: '/api-keys',
         },
         {
-          title: t("api_keys.create_api_key"),
+          title: t('api_keys.create_api_key'),
           is_active: true,
         },
       ],
     },
     fields: [
       {
-        title: t("api_keys.form.name"),
-        name: "title",
-        type: "text",
-        placeholder: t("api_keys.form.name_placeholder"),
+        title: t('api_keys.form.name'),
+        name: 'title',
+        type: 'text',
+        placeholder: t('api_keys.form.name_placeholder'),
         validation: {
           required: true,
         },
@@ -50,19 +47,19 @@ export default async function () {
     },
     submit: {
       button: {
-        title: t("api_keys.form.submit"),
+        title: t('api_keys.form.submit'),
       },
       handler: async (data: FormData, passby: any) => {
-        "use server";
+        'use server';
 
         const { user_uuid } = passby;
         if (!user_uuid) {
-          throw new Error("no auth");
+          throw new Error('no auth');
         }
 
-        const title = data.get("title") as string;
+        const title = data.get('title') as string;
         if (!title || !title.trim()) {
-          throw new Error("invalid params");
+          throw new Error('invalid params');
         }
 
         const key = `sk-${getNonceStr(32)}`;
@@ -79,13 +76,13 @@ export default async function () {
           await insertApikey(apikey);
 
           return {
-            status: "success",
-            message: "apikey created",
-            redirect_url: "/api-keys",
+            status: 'success',
+            message: 'apikey created',
+            redirect_url: '/api-keys',
           };
         } catch (e: any) {
           console.error(e);
-          throw new Error("create api key failed: " + e.message);
+          throw new Error('create api key failed: ' + e.message);
         }
       },
     },

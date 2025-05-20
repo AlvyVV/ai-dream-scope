@@ -3,9 +3,6 @@ import { Avatar } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 
-
-export const runtime = "edge";
-
 export async function generateMetadata() {
   return {
     title: 'About AI Dream Scope | Expert Dream Analysis & Interpretation Team',

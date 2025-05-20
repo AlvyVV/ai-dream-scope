@@ -1,17 +1,13 @@
-import { NavItem } from '@/types/blocks/base';
-import { Blog } from '@/types/blog';
-import TableSlot from '@/components/dashboard/slots/table';
-import { Table as TableSlotType } from '@/types/slots/table';
-import { getAllBlogs } from '@/models/blog';
-import moment from 'moment';
 import SyncButtonPost from '@/components/blocks/i18n/sync-button-post';
 import DeleteButton from '@/components/blocks/post/delete-button';
+import TableSlot from '@/components/dashboard/slots/table';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { getAllBlogs } from '@/models/blog';
+import { Blog } from '@/types/blog';
+import { Table as TableSlotType } from '@/types/slots/table';
 import { Edit2, Eye } from 'lucide-react';
-
-
-export const runtime = "edge";
+import moment from 'moment';
+import Link from 'next/link';
 
 // 英文语言代码，作为主要语言
 const PRIMARY_LANGUAGE = 'en';

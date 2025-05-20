@@ -1,9 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
 import { publishPageConfigsByCodeAndVersion } from '@/models/page-config';
 import { revalidatePath } from 'next/cache';
-
-
-export const runtime = "edge";
+import { NextRequest, NextResponse } from 'next/server';
 
 /**
  * 处理页面配置发布请求
@@ -40,9 +37,6 @@ export async function POST(req: NextRequest) {
   } catch (error: any) {
     console.error('发布API错误:', error);
 
-    return NextResponse.json(
-      { error: `发布失败: ${error.message || '未知错误'}` },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: `发布失败: ${error.message || '未知错误'}` }, { status: 500 });
   }
 }

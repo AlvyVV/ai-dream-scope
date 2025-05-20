@@ -1,9 +1,6 @@
 import Header from '@/components/blocks/header';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-
-export const runtime = "edge";
-
 export async function generateMetadata() {
   return {
     title: 'Resource Library | AI Dream Scope',

@@ -1,16 +1,12 @@
-import { BlogStatus, findBlogBySlug, insertBlog } from '@/models/blog';
 import { localeNames, locales } from '@/i18n/locale';
+import { BlogStatus, findBlogBySlug, insertBlog } from '@/models/blog';
 
 import Empty from '@/components/blocks/empty';
 import FormSlot from '@/components/dashboard/slots/form';
-import { Form as FormSlotType } from '@/types/slots/form';
-import { Blog } from '@/types/blog';
 import { getIsoTimestr } from '@/lib/time';
 import { getUserInfo } from '@/services/user';
-import { getUuid } from '@/lib/hash';
-
-
-export const runtime = "edge";
+import { Blog } from '@/types/blog';
+import { Form as FormSlotType } from '@/types/slots/form';
 
 export default async function () {
   const user = await getUserInfo();

@@ -1,15 +1,12 @@
-import { PageConfigStatus, findPageConfigByCode, insertPageConfig } from '@/models/page-config';
 import { localeNames, locales } from '@/i18n/locale';
+import { PageConfigStatus, findPageConfigByCode, insertPageConfig } from '@/models/page-config';
 
 import Empty from '@/components/blocks/empty';
 import FormSlot from '@/components/dashboard/slots/form';
-import { Form as FormSlotType } from '@/types/slots/form';
-import { PageConfig } from '@/types/page-config';
+import { getAdminSupabaseClient } from '@/models/db';
 import { getUserInfo } from '@/services/user';
-import { getAdminSupabaseClient, getSupabaseClient } from '@/models/db';
-
-
-export const runtime = "edge";
+import { PageConfig } from '@/types/page-config';
+import { Form as FormSlotType } from '@/types/slots/form';
 
 export default async function () {
   const user = await getUserInfo();
@@ -221,9 +218,7 @@ export default async function () {
 
             return {
               status: 'error',
-              message: `保存页面配置失败: ${
-                err?.message || err?.details || JSON.stringify(err) || '未知错误'
-              }`,
+              message: `保存页面配置失败: ${err?.message || err?.details || JSON.stringify(err) || '未知错误'}`,
             };
           }
         } catch (err: any) {

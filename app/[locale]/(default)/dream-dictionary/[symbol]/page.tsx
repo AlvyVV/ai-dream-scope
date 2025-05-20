@@ -13,9 +13,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-
-export const runtime = "edge";
-
 export async function generateMetadata({ params }: { params: Promise<{ symbol: string }> }) {
   const locale = await getLocale();
   const { symbol } = await params;

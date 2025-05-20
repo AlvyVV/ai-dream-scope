@@ -2,9 +2,6 @@ import { generateDreamPrompt } from '@/aisdk/models/geimini';
 import { updateUserAiChaImage } from '@/models/user-ai-chat';
 import { NextRequest, NextResponse } from 'next/server';
 
-
-export const runtime = "edge";
-
 export async function POST(request: NextRequest) {
   try {
     console.log('[DEBUG] 开始处理梦境图片生成请求');

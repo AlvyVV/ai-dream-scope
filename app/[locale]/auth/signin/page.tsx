@@ -1,13 +1,8 @@
-import SignForm from '@/components/sign/form';
 import { auth } from '@/auth';
+import SignForm from '@/components/sign/form';
 import { redirect } from 'next/navigation';
 
-
-export const runtime = "edge";
-
-export default async function Page(props: {
-  searchParams: Promise<{ callbackUrl: string | undefined }>;
-}) {
+export default async function Page(props: { searchParams: Promise<{ callbackUrl: string | undefined }> }) {
   const searchParams = await props.searchParams;
   const session = await auth();
   if (session) {

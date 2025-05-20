@@ -1,10 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { getIsoTimestr } from '@/lib/time';
 import { addComment } from '@/models/comment';
 import { Comment } from '@/types/comment';
-import { getIsoTimestr } from '@/lib/time';
-
-
-export const runtime = "edge";
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
@@ -50,9 +47,6 @@ export async function POST(req: NextRequest) {
   } catch (error: any) {
     console.error('添加评论API错误:', error);
 
-    return NextResponse.json(
-      { error: `添加评论失败: ${error.message || '未知错误'}` },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: `添加评论失败: ${error.message || '未知错误'}` }, { status: 500 });
   }
 }

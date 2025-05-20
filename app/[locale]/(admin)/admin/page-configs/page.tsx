@@ -1,19 +1,15 @@
-import { NavItem } from '@/types/blocks/base';
-import { PageConfig } from '@/types/page-config';
-import TableSlot from '@/components/dashboard/slots/table';
-import { Table as TableSlotType } from '@/types/slots/table';
-import { getAllPageConfigs, PageConfigStatus } from '@/models/page-config';
-import moment from 'moment';
 import SyncButton from '@/components/blocks/i18n/sync-button';
-import PublishButton from '@/components/blocks/page-config/publish-button';
 import DownloadButton from '@/components/blocks/page-config/download-button';
+import PublishButton from '@/components/blocks/page-config/publish-button';
+import TableSlot from '@/components/dashboard/slots/table';
+import { Button } from '@/components/ui/button';
+import { getAllPageConfigs, PageConfigStatus } from '@/models/page-config';
+import { PageConfig } from '@/types/page-config';
+import { Table as TableSlotType } from '@/types/slots/table';
+import { Edit2, Eye } from 'lucide-react';
+import moment from 'moment';
 import { unstable_cache } from 'next/cache';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Edit2, Eye } from 'lucide-react';
-
-
-export const runtime = "edge";
 
 // 英文语言代码，作为主要语言
 const PRIMARY_LANGUAGE = 'en';
@@ -128,19 +124,10 @@ export default async function () {
               {isPrimaryLanguage && <SyncButton id={item.id as number} />}
 
               {/* 只有英文版本且为草稿状态才显示发布按钮 */}
-              {isPrimaryLanguage && isDraft && (
-                <PublishButton
-                  id={item.id as number}
-                  code={item.code}
-                  version={item.version}
-                  locale={item.locale}
-                />
-              )}
+              {isPrimaryLanguage && isDraft && <PublishButton id={item.id as number} code={item.code} version={item.version} locale={item.locale} />}
 
               {/* 只有英文版本且为已发布状态才显示下载按钮 */}
-              {isPrimaryLanguage && isPublished && (
-                <DownloadButton code={item.code} version={item.version} isPublished={isPublished} />
-              )}
+              {isPrimaryLanguage && isPublished && <DownloadButton code={item.code} version={item.version} isPublished={isPublished} />}
 
               {/* 编辑按钮，只有英文版本可用 */}
               {isPrimaryLanguage ? (

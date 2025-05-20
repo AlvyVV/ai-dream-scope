@@ -1,9 +1,6 @@
 import { respOk } from '@/lib/resp';
 import Stripe from 'stripe';
 
-
-export const runtime = "edge";
-
 export async function POST(req: Request) {
   try {
     const stripePrivateKey = process.env.STRIPE_PRIVATE_KEY;

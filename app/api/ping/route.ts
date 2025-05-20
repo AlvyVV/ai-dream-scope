@@ -1,25 +1,18 @@
-import {
-  CreditsAmount,
-  CreditsTransType,
-  decreaseCredits,
-} from "@/services/credit";
-import { respData, respErr } from "@/lib/resp";
+import { respData, respErr } from '@/lib/resp';
+import { CreditsAmount, CreditsTransType, decreaseCredits } from '@/services/credit';
 
-import { getUserUuid } from "@/services/user";
-
-
-export const runtime = "edge";
+import { getUserUuid } from '@/services/user';
 
 export async function POST(req: Request) {
   try {
     const { message } = await req.json();
     if (!message) {
-      return respErr("invalid params");
+      return respErr('invalid params');
     }
 
     const user_uuid = await getUserUuid();
     if (!user_uuid) {
-      return respErr("no auth");
+      return respErr('no auth');
     }
 
     // decrease credits for ping
@@ -33,7 +26,7 @@ export async function POST(req: Request) {
       pong: `received message: ${message}`,
     });
   } catch (e) {
-    console.log("test failed:", e);
-    return respErr("test failed");
+    console.log('test failed:', e);
+    return respErr('test failed');
   }
 }

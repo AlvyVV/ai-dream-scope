@@ -16,9 +16,6 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { DateTabs, MobileDayList, MobileMonthView, MobileStyles, MobileTopControls } from './mobile-components';
 
-
-export const runtime = "edge";
-
 interface ChatMessage {
   role: string;
   content: string | any;

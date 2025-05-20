@@ -5,8 +5,6 @@ import TableOfContents from '@/components/blocks/blog-detail/toc';
 import Empty from '@/components/blocks/empty';
 import Header from '@/components/blocks/header';
 
-export const runtime = "edge";
-
 export async function generateMetadata(props: { params: Promise<{ locale: string; slug: string }> }) {
   const params = await props.params;
 

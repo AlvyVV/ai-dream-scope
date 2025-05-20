@@ -1,8 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
 import { getAllItems } from '@/services/item_config';
-
-
-export const runtime = "edge";
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
   try {
@@ -36,9 +33,6 @@ export async function GET(request: NextRequest) {
     console.error('获取符号API错误:', error);
     const errorMessage = error instanceof Error ? error.message : '未知错误';
 
-    return NextResponse.json(
-      { success: false, message: `获取符号数据失败: ${errorMessage}` },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, message: `获取符号数据失败: ${errorMessage}` }, { status: 500 });
   }
 }

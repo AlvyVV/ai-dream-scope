@@ -1,16 +1,13 @@
 import Header from '@/components/blocks/header';
 import { Card, CardContent } from '@/components/ui/card';
-import { getLandingPage } from '@/services/page';
+import { getPage } from '@/services/load-page';
 import { Brain, Globe, Moon, Sparkles } from 'lucide-react';
-import { getLocale, getTranslations } from 'next-intl/server';
+import { getLocale } from 'next-intl/server';
 import Chat from './chat';
 import DreamAnimation from './dream-animation';
 import IntroCard from './intro-card';
 import WorldMap from './map';
 import TestimonialSmall from './testimonial-small';
-
-
-export const runtime = "edge";
 
 export async function generateMetadata() {
   return {
@@ -24,8 +21,7 @@ export async function generateMetadata() {
  */
 export default async function DreamInterpreter() {
   const locale = await getLocale();
-  const page = await getLandingPage('interpretater', locale);
-  const t = await getTranslations('dream');
+  const page = await getPage('interpretater', locale);
 
   return (
     <>

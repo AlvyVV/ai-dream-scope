@@ -1,8 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
 import { deleteBlog, findBlogByUuid } from '@/models/blog';
-
-
-export const runtime = "edge";
+import { NextRequest, NextResponse } from 'next/server';
 
 /**
  * 处理帖子删除请求
@@ -36,9 +33,6 @@ export async function POST(req: NextRequest) {
   } catch (error: any) {
     console.error('帖子删除API错误:', error);
 
-    return NextResponse.json(
-      { error: `帖子删除失败: ${error.message || '未知错误'}` },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: `帖子删除失败: ${error.message || '未知错误'}` }, { status: 500 });
   }
 }

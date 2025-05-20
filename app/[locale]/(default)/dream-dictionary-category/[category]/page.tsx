@@ -14,9 +14,6 @@ import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-
-export const runtime = "edge";
-
 // Get popular symbols for a specific category
 async function getCategoryPopularSymbols(locale: string, category: string): Promise<ItemConfig[]> {
   try {

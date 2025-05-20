@@ -10,8 +10,6 @@ import { Sparkles } from 'lucide-react';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 
-export const runtime = "edge";
-
 // import { useTranslations } from 'next-intl';
 
 // 定义字母表数组

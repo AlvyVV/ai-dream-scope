@@ -1,7 +1,8 @@
 import { getPgClient } from '@/models/db';
 import NodeCache from 'node-cache';
 
-const componentCache = new NodeCache({ stdTTL: 36000 });
+const componentCache = new NodeCache({ stdTTL: 60 });
+
 export async function getComponent<T>(locale: string, namespace: string): Promise<T> {
   let normalizedLocale = locale;
   if (normalizedLocale === 'zh-CN') {
@@ -9,7 +10,7 @@ export async function getComponent<T>(locale: string, namespace: string): Promis
   }
   normalizedLocale = normalizedLocale.toLowerCase();
 
-  const cachedData = componentCache.get<T>(normalizedLocale);
+  const cachedData = componentCache.get<T>(locale + '-' + namespace);
   if (cachedData) {
     return cachedData;
   }
@@ -23,8 +24,7 @@ export async function getComponent<T>(locale: string, namespace: string): Promis
       .eq('project_id', process.env.PROJECT_ID)
       .eq('is_deleted', false)
       .single();
-    console.log('result', result);
-    componentCache.set(normalizedLocale, result.data?.content as T);
+    componentCache.set(locale + '-' + namespace, result.data?.content as T);
 
     return result.data?.content as T;
   } catch (error) {

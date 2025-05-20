@@ -1,23 +1,13 @@
-import {
-  PageConfigStatus,
-  findPageConfigById,
-  findPageConfigByCode,
-  updatePageConfig,
-  insertPageConfig,
-  findPreviousVersionPageConfig,
-} from '@/models/page-config';
-import { localeNames, locales } from '@/i18n/locale';
+import { localeNames } from '@/i18n/locale';
+import { PageConfigStatus, findPageConfigByCode, findPageConfigById, findPreviousVersionPageConfig, insertPageConfig, updatePageConfig } from '@/models/page-config';
 import { redirect } from 'next/navigation';
 
 import Empty from '@/components/blocks/empty';
-import FormSlot from '@/components/dashboard/slots/form';
-import { Form as FormSlotType } from '@/types/slots/form';
-import { PageConfig } from '@/types/page-config';
-import { getUserInfo } from '@/services/user';
 import SyncButton from '@/components/blocks/i18n/sync-button';
-
-
-export const runtime = "edge";
+import FormSlot from '@/components/dashboard/slots/form';
+import { getUserInfo } from '@/services/user';
+import { PageConfig } from '@/types/page-config';
+import { Form as FormSlotType } from '@/types/slots/form';
 
 // 英文语言代码，作为主要语言
 const PRIMARY_LANGUAGE = 'en';
@@ -77,11 +67,7 @@ export default async function Page(props: { params: Promise<{ id: string; locale
   };
 
   const form: FormSlotType = {
-    title: isNewPage
-      ? '添加页面配置'
-      : isPublished
-      ? `编辑页面配置 (新版本 v${pageConfig.version + 1})`
-      : '编辑页面配置',
+    title: isNewPage ? '添加页面配置' : isPublished ? `编辑页面配置 (新版本 v${pageConfig.version + 1})` : '编辑页面配置',
     crumb: {
       items: [
         {
@@ -149,11 +135,7 @@ export default async function Page(props: { params: Promise<{ id: string; locale
         title: '版本',
         type: 'number',
         disabled: true, // 版本号不允许编辑
-        help: isPublished
-          ? '编辑已发布的配置将自动创建新版本'
-          : isNewPage
-          ? '首次创建版本号为1'
-          : '版本号不可编辑',
+        help: isPublished ? '编辑已发布的配置将自动创建新版本' : isNewPage ? '首次创建版本号为1' : '版本号不可编辑',
       },
       {
         name: 'content',

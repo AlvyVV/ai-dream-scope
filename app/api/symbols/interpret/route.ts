@@ -4,9 +4,6 @@ import { ItemConfig } from '@/types/item-config';
 import { SymbolInterpretation } from '@/types/pages/interpretation';
 import { NextRequest, NextResponse } from 'next/server';
 
-
-export const runtime = "edge";
-
 // 并发控制函数
 async function processBatch<T>(items: T[], processFn: (item: T) => Promise<void>, batchSize: number): Promise<void> {
   for (let i = 0; i < items.length; i += batchSize) {

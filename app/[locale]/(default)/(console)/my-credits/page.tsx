@@ -1,14 +1,11 @@
 import Empty from '@/components/blocks/empty';
 import TableSlot from '@/components/console/slots/table';
-import { Table as TableSlotType } from '@/types/slots/table';
 import { findCreditsByUserUuid } from '@/models/credit';
-import { getTranslations } from 'next-intl/server';
 import { getUserCredits } from '@/services/credit';
 import { getUserUuid } from '@/services/user';
+import { Table as TableSlotType } from '@/types/slots/table';
 import moment from 'moment';
-
-
-export const runtime = "edge";
+import { getTranslations } from 'next-intl/server';
 
 export default async function () {
   const t = await getTranslations();

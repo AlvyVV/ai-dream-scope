@@ -3,9 +3,6 @@
 import { handleOrderSession } from '@/services/order';
 import { redirect } from 'next/navigation';
 
-
-export const runtime = "edge";
-
 export default async function Page(props: { params: Promise<{ session_id: string; locale: string }> }) {
   const params = await props.params;
 

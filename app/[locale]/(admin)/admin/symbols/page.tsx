@@ -1,13 +1,5 @@
-import { ItemConfig } from '@/types/item-config';
 import { getAllItems } from '@/services/item_config';
-import moment from 'moment';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Edit2, Eye } from 'lucide-react';
 import SymbolTable from './symbol-table';
-
-
-export const runtime = "edge";
 
 // 英文语言代码，作为主要语言
 const PRIMARY_LANGUAGE = 'en';

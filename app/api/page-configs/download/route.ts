@@ -1,10 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
-import JSZip from 'jszip';
-import { findPageConfigById, PageConfigStatus } from '@/models/page-config';
 import { getAdminSupabaseClient } from '@/models/db';
-
-
-export const runtime = "edge";
+import { PageConfigStatus } from '@/models/page-config';
+import JSZip from 'jszip';
+import { NextRequest, NextResponse } from 'next/server';
 
 /**
  * 获取指定代码和版本的所有语言页面配置
@@ -18,12 +15,7 @@ async function getAllLanguageVersions(code: string, version: number) {
 
     // 查询已发布状态的记录
     console.log(`[下载API] 查询状态为已发布的记录`);
-    const { data, error } = await supabase
-      .from('page_configs')
-      .select('*')
-      .eq('code', code)
-      .eq('version', version)
-      .eq('status', PageConfigStatus.Published); // 只获取已发布的版本
+    const { data, error } = await supabase.from('page_configs').select('*').eq('code', code).eq('version', version).eq('status', PageConfigStatus.Published); // 只获取已发布的版本
 
     if (error) {
       console.error('[下载API] 获取多语言配置时出错:', error);
@@ -34,11 +26,7 @@ async function getAllLanguageVersions(code: string, version: number) {
 
     if (!data || data.length === 0) {
       // 尝试查询任何状态的记录，看看是否存在但不是已发布状态
-      const { data: anyStatusData, error: anyStatusError } = await supabase
-        .from('page_configs')
-        .select('id, code, locale, status, version')
-        .eq('code', code)
-        .eq('version', version);
+      const { data: anyStatusData, error: anyStatusError } = await supabase.from('page_configs').select('id, code, locale, status, version').eq('code', code).eq('version', version);
 
       if (anyStatusData && anyStatusData.length > 0) {
         // 记录存在但不是已发布状态
@@ -146,9 +134,7 @@ export async function GET(req: NextRequest) {
         continue;
       }
 
-      console.log(
-        `[下载API] 添加 ${locale}.json 文件到ZIP，字段数: ${Object.keys(combinedData).length}`
-      );
+      console.log(`[下载API] 添加 ${locale}.json 文件到ZIP，字段数: ${Object.keys(combinedData).length}`);
 
       // 添加到ZIP
       zip.file(`${locale}.json`, JSON.stringify(combinedData, null, 2));
@@ -179,9 +165,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: '生成的ZIP文件为空' }, { status: 500 });
     }
 
-    console.log(
-      `[下载API] ZIP文件生成完成，大小: ${zipContent.byteLength} 字节，包含 ${fileCount} 个文件`
-    );
+    console.log(`[下载API] ZIP文件生成完成，大小: ${zipContent.byteLength} 字节，包含 ${fileCount} 个文件`);
 
     // 返回ZIP文件
     console.log(`[下载API] 发送ZIP文件 ${code}.zip 到客户端`);
@@ -198,9 +182,6 @@ export async function GET(req: NextRequest) {
     return response;
   } catch (error: any) {
     console.error('[下载API] 生成下载文件时出错:', error);
-    return NextResponse.json(
-      { error: `下载失败: ${error.message || '未知错误'}` },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: `下载失败: ${error.message || '未知错误'}` }, { status: 500 });
   }
 }

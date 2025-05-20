@@ -1,15 +1,12 @@
-import { JSONValue, experimental_generateImage as generateImage } from 'ai';
 import { respData, respErr } from '@/lib/resp';
+import { JSONValue, experimental_generateImage as generateImage } from 'ai';
 
-import type { ImageModelV1 } from '@ai-sdk/provider';
-import { getUuid } from '@/lib/hash';
 import { kling } from '@/aisdk/kling';
+import { getUuid } from '@/lib/hash';
 import { newStorage } from '@/lib/storage';
 import { openai } from '@ai-sdk/openai';
+import type { ImageModelV1 } from '@ai-sdk/provider';
 import { replicate } from '@ai-sdk/replicate';
-
-
-export const runtime = "edge";
 
 export async function POST(req: Request) {
   try {

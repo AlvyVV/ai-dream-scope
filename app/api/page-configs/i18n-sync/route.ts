@@ -1,9 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { syncPageConfigI18n } from '@/services/i18n-sync';
 import { findPageConfigById } from '@/models/page-config';
-
-
-export const runtime = "edge";
+import { syncPageConfigI18n } from '@/services/i18n-sync';
+import { NextRequest, NextResponse } from 'next/server';
 
 /**
  * 处理页面配置多语言同步请求
@@ -37,9 +34,6 @@ export async function POST(req: NextRequest) {
   } catch (error: any) {
     console.error('多语言同步API错误:', error);
 
-    return NextResponse.json(
-      { error: `多语言同步失败: ${error.message || '未知错误'}` },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: `多语言同步失败: ${error.message || '未知错误'}` }, { status: 500 });
   }
 }

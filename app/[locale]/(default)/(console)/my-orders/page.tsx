@@ -1,15 +1,12 @@
 import { getOrdersByPaidEmail, getOrdersByUserUuid } from '@/models/order';
 import { getUserEmail, getUserUuid } from '@/services/user';
 
-import { TableColumn } from '@/types/blocks/table';
 import TableSlot from '@/components/console/slots/table';
+import { TableColumn } from '@/types/blocks/table';
 import { Table as TableSlotType } from '@/types/slots/table';
-import { getTranslations } from 'next-intl/server';
 import moment from 'moment';
+import { getTranslations } from 'next-intl/server';
 import { redirect } from 'next/navigation';
-
-
-export const runtime = "edge";
 
 export default async function () {
   const t = await getTranslations();
@@ -34,8 +31,7 @@ export default async function () {
     {
       name: 'amount',
       title: t('my_orders.table.amount'),
-      callback: (item: any) =>
-        `${item.currency.toUpperCase() === 'CNY' ? '¥' : '$'} ${item.amount / 100}`,
+      callback: (item: any) => `${item.currency.toUpperCase() === 'CNY' ? '¥' : '$'} ${item.amount / 100}`,
     },
     {
       name: 'paid_at',

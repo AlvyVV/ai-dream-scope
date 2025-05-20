@@ -4,9 +4,6 @@ import { Blog as BlogType } from '@/types/blocks/blog';
 import { ArrowRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
-
-export const runtime = "edge";
-
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
   const locale = params.locale;

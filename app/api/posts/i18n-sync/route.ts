@@ -1,9 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { syncBlogI18n } from '@/services/post-i18n-sync';
 import { findBlogByUuid } from '@/models/blog';
-
-
-export const runtime = "edge";
+import { syncBlogI18n } from '@/services/post-i18n-sync';
+import { NextRequest, NextResponse } from 'next/server';
 
 /**
  * 处理文章多语言同步请求
@@ -42,9 +39,6 @@ export async function POST(req: NextRequest) {
   } catch (error: any) {
     console.error('多语言同步API错误:', error);
 
-    return NextResponse.json(
-      { error: `多语言同步失败: ${error.message || '未知错误'}` },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: `多语言同步失败: ${error.message || '未知错误'}` }, { status: 500 });
   }
 }

@@ -1,12 +1,9 @@
-import { PageConfigStatus, findPageConfigById } from '@/models/page-config';
-import { localeNames } from '@/i18n/locale';
-import moment from 'moment';
 import Empty from '@/components/blocks/empty';
-import Link from 'next/link';
+import { localeNames } from '@/i18n/locale';
+import { PageConfigStatus, findPageConfigById } from '@/models/page-config';
 import { ArrowLeftIcon } from 'lucide-react';
-
-
-export const runtime = "edge";
+import moment from 'moment';
+import Link from 'next/link';
 
 export default async function Page(props: { params: Promise<{ id: string; locale: string }> }) {
   const params = await props.params;
@@ -53,10 +50,7 @@ export default async function Page(props: { params: Promise<{ id: string; locale
     <div className="container mx-auto py-6">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
-          <Link
-            href="/admin/page-configs"
-            className="text-gray-500 hover:text-gray-700 flex items-center gap-1"
-          >
+          <Link href="/admin/page-configs" className="text-gray-500 hover:text-gray-700 flex items-center gap-1">
             <ArrowLeftIcon size={16} />
             <span>返回列表</span>
           </Link>
@@ -76,9 +70,7 @@ export default async function Page(props: { params: Promise<{ id: string; locale
           </div>
           <div>
             <p className="text-sm text-gray-500 mb-1">状态</p>
-            <span className={getStatusStyle(pageConfig.status)}>
-              {getStatusLabel(pageConfig.status)}
-            </span>
+            <span className={getStatusStyle(pageConfig.status)}>{getStatusLabel(pageConfig.status)}</span>
           </div>
           <div>
             <p className="text-sm text-gray-500 mb-1">版本</p>
@@ -96,16 +88,12 @@ export default async function Page(props: { params: Promise<{ id: string; locale
 
         <div className="mb-6">
           <p className="text-sm text-gray-500 mb-1">内容 (JSON)</p>
-          <pre className="bg-gray-50 p-4 rounded-md overflow-auto max-h-[300px] text-sm font-mono">
-            {JSON.stringify(pageConfig.content, null, 2)}
-          </pre>
+          <pre className="bg-gray-50 p-4 rounded-md overflow-auto max-h-[300px] text-sm font-mono">{JSON.stringify(pageConfig.content, null, 2)}</pre>
         </div>
 
         <div>
           <p className="text-sm text-gray-500 mb-1">元数据 (JSON)</p>
-          <pre className="bg-gray-50 p-4 rounded-md overflow-auto max-h-[200px] text-sm font-mono">
-            {JSON.stringify(pageConfig.meta, null, 2)}
-          </pre>
+          <pre className="bg-gray-50 p-4 rounded-md overflow-auto max-h-[200px] text-sm font-mono">{JSON.stringify(pageConfig.meta, null, 2)}</pre>
         </div>
       </div>
     </div>
