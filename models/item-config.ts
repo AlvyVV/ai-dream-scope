@@ -1,5 +1,5 @@
 import { ItemConfig } from '@/types/item-config';
-import { getAdminSupabaseClient } from './db';
+import { getAdminSupabaseClient, getPgClient } from './db';
 
 const tableName = 'item_configs';
 
@@ -451,6 +451,62 @@ export async function findItemConfigsByCategory(category: string, locale: string
     return data || [];
   } catch (error) {
     console.error('DB: 根据分类查询项目配置异常:', error);
+    if (error instanceof Error) {
+      console.error('错误堆栈:', error.stack);
+    }
+    return [];
+  }
+}
+
+/**
+ * 根据代码前缀查询字典项
+ * @param codePrefix 代码前缀
+ * @param locale 语言代码
+ * @param page 页码（可选）
+ * @param limit 每页记录数（可选）
+ * @returns 包含code和code（作为slug）的对象数组
+ */
+export async function findDictionaryItemsByCodePrefix(codePrefix: string, locale: string, page: number = 1, limit: number = 100): Promise<Array<{ code: string; slug: string }>> {
+  try {
+    // 导入getPgClient函数
+    const pgClient = getPgClient();
+
+    // 构建查询条件
+    const query = pgClient
+      .from('item_configs')
+      .select('code, name')
+      .eq('project_id', process.env.PROJECT_ID)
+      .eq('category', 'dictionary') // 假设dictionary存储在category字段中
+      .eq('locale', locale)
+      .eq('is_deleted', false)
+      .like('code', `${codePrefix}%`) // 使用LIKE查询以代码前缀开头的记录
+      .order('code', { ascending: true })
+      .limit(limit)
+      .range((page - 1) * limit, page * limit - 1); // 使用range代替offset
+
+    const { data, error } = await query;
+
+    if (error) {
+      console.error('DB: 根据代码前缀查询字典项失败:', error);
+      console.error('错误详情:', {
+        code: error.code,
+        message: error.message,
+        details: error.details,
+        hint: error.hint,
+      });
+      throw error;
+    }
+
+    // 将结果转换为所需格式（code和slug字段）
+    // 由于可能没有slug字段，我们使用code作为slug
+    return (
+      data?.map((item: { code: string }) => ({
+        code: item.code,
+        slug: item.code, // 使用code作为slug（如果有slug字段，可以改为item.slug）
+      })) || []
+    );
+  } catch (error) {
+    console.error('DB: 根据代码前缀查询字典项异常:', error);
     if (error instanceof Error) {
       console.error('错误堆栈:', error.stack);
     }

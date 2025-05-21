@@ -1,5 +1,5 @@
 export interface Category {
-  id: number;
+  category_id: string;
   project_id: string;
   name: string;
   code: string;

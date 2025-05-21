@@ -1,10 +1,5 @@
 export interface ItemConfig {
   /**
-   * 主键ID，由数据库自动生成
-   */
-  id?: number;
-
-  /**
    * 语言代码
    */
   locale?: string;

@@ -1,5 +1,5 @@
 import { Category, CategoryCreateInput, CategoryPaginationInput, CategoryUpdateInput, CategoryWhereInput } from '@/types/category';
-import { getAdminSupabaseClient } from './db';
+import { getAdminSupabaseClient, getPgClient } from './db';
 
 const TABLE_NAME = 'categories';
 
@@ -52,10 +52,6 @@ export async function getCategoryById(id: number): Promise<Category | null> {
     const { data, error } = await supabase.from(TABLE_NAME).select('*').eq('id', id).single();
 
     if (error) {
-      if (error.code === 'PGRST116') {
-        // 未找到记录
-        return null;
-      }
       console.error('查询类别失败:', error.message);
       throw new Error(`查询类别失败: ${error.message}`);
     }
@@ -77,27 +73,35 @@ export async function getCategoryById(id: number): Promise<Category | null> {
 /**
  * 根据slug查询类别
  * @param slug 类别slug
- * @param locale 语言
  * @returns 类别信息
  */
-export async function getCategoryByCode(code: string, locale: string): Promise<Category | null> {
+export async function getCategoryBySlug(slug: string): Promise<Category | null> {
   try {
-    const supabase = await getAdminSupabaseClient();
+    console.log(`[getCategoryBySlug] 开始查询类别 slug: ${slug}`);
+    const pgClient = getPgClient();
 
-    const { data, error } = await supabase.from(TABLE_NAME).select('*').eq('code', code).eq('locale', locale).single();
+    // 记录查询条件
+    console.log(`[getCategoryBySlug] 查询条件: project_id=${process.env.PROJECT_ID}, data_type=dictionary, slug=${slug}`);
+
+    const { data, error } = await pgClient.from('categories').select('*').eq('project_id', process.env.PROJECT_ID).eq('data_type', 'dictionary').eq('slug', slug).single();
+
     if (error) {
+      console.log(`[getCategoryBySlug] 查询错误: ${error.message}`);
       if (error.code === 'PGRST116') {
         // 未找到记录
+        console.log(`[getCategoryBySlug] 未找到记录: slug=${slug}`);
         return null;
       }
-      console.error('查询类别失败:', error.message);
+      console.error('[getCategoryBySlug] 查询类别失败:', error.message);
       throw new Error(`查询类别失败: ${error.message}`);
     }
 
     if (!data) {
+      console.log(`[getCategoryBySlug] 未找到数据: slug=${slug}`);
       return null;
     }
 
+    console.log(`[getCategoryBySlug] 成功获取类别数据: id=${data.id}, name=${data.name}`);
     return {
       ...data,
       created_at: new Date(data.created_at),

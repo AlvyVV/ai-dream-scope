@@ -1,8 +1,124 @@
 {
-  "theme": "light",
   "meta": {
-    "title": "Ai Dream Scope | Dream Dictionary & Interpretations",
-    "description": "Decode your dreams with our AI-powered dream interpretation tool. Get personalized analysis of your dreams based on psychology, symbolism, and cultural insights."
+    "title": "AI Dream Interpreter: Get Free & Professional Dream Analysis Online",
+    "description": "Get instant and personalized dream interpretations with our free AI-powered tool. Explore a global database of dream symbols and unlock the hidden meanings behind your dreams."
+  },
+  "header": {
+    "title": "AI Dream Scope Dream Interpreter",
+    "subtitle": "Uncover the Hidden Meanings in Your Dreams with Our Free AI Tool",
+    "description": "Explore the depths of your subconscious mind. Our advanced AI Dream Interpretation technology helps you understand hidden messages, emotions, and symbolic meanings in your dreams, unlocking insights for your waking life."
+  },
+  "features": [
+    {
+      "icon": "Brain",
+      "title": "AI Dream Analysis",
+      "description": "Advanced AI technology analyzes symbols, scenes, and emotions in your dreams, revealing their hidden meanings"
+    },
+    {
+      "icon": "Sparkles",
+      "title": "Professional Dream Interpretation",
+      "description": "Get personalized professional interpretation and practical advice for your unique dreams, helping you better understand yourself"
+    },
+    {
+      "icon": "Globe",
+      "title": "Global Dream Database",
+      "description": "Connect with the AI Dream Scope global community and explore dream symbols and universal language across different cultures"
+    }
+  ],
+  "introCard": {
+    "title": "Get More Accurate AI Dream Interpretation Service",
+    "tips": [
+      {
+        "icon": "Lightbulb",
+        "title": "Detailed Dream Description",
+        "description": "Provide complete dream details including scenes, characters, colors, emotions, and key dream symbols for accurate AI dream interpretation"
+      },
+      {
+        "icon": "Brain",
+        "title": "Record Dream Emotions",
+        "description": "Share feelings during the dream and emotional reactions after waking up, these are crucial for AI Dream Scope interpretation"
+      },
+      {
+        "icon": "Info",
+        "title": "Add Life Context",
+        "description": "Mention life events or concerns related to your dream for more personalized and deeper dream interpretation"
+      }
+    ],
+    "highlights": [
+      {
+        "rating": 4.9,
+        "totalReviews": "12K+",
+        "text": "Dream Interpreter Satisfaction"
+      },
+      {
+        "rating": 92,
+        "unit": "%",
+        "text": "Dream Interpretation Accuracy"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Users Say About AI Dream Scope Interpretation",
+    "items": [
+      {
+        "title": "James",
+        "label": "Tokyo",
+        "description": "I was really struggling with these recurring falling dreams - they were driving me crazy! The AI analysis was eye-opening. It helped me realize they were connected to my anxiety about a big project at work. Now I actually feel more in control. Way better than those generic dream meaning websites!",
+        "image": {
+          "src": "/imgs/users/James.webp"
+        },
+        "variant": "purple"
+      },
+      {
+        "title": "Ruby",
+        "label": "London",
+        "description": "Honestly? I thought this was going to be another gimmicky AI thing. But when it analyzed my wedding dreams, it picked up on anxieties about commitment I didn't even realize I had. My therapist was impressed when I brought it up - it really helped move our sessions forward.",
+        "image": {
+          "src": "/imgs/users/Ruby.webp"
+        },
+        "variant": "blue"
+      },
+      {
+        "title": "Ben",
+        "label": "Sydney",
+        "description": "Been keeping a dream journal for 3+ years, and this tool is something else. It spotted patterns across months of entries that completely flew over my head. Turns out my dreams about locked doors were all tied to my fear of opening up in relationships. Pretty mind-blowing stuff.",
+        "image": {
+          "src": "/imgs/users/Ben.webp"
+        },
+        "variant": "pink"
+      },
+      {
+        "title": "Ella",
+        "label": "Paris",
+        "description": "Started using this after my grandfather passed away. He kept appearing in my dreams, and I couldn't understand why some felt peaceful while others left me upset. The AI helped me see these dreams were actually about unresolved conversations. It's been really healing.",
+        "image": {
+          "src": "/imgs/users/Ella.webp"
+        },
+        "variant": "amber"
+      },
+      {
+        "title": "Neil",
+        "label": "Berlin",
+        "description": "The accuracy is wild! I kept having dreams about being on boats in stormy water - turns out it wasn't random at all. The AI connected it to my uncertainty about switching careers. That interpretation gave me the push I needed to finally make the jump to a new industry.",
+        "image": {
+          "src": "/imgs/users/Neil.webp"
+        },
+        "variant": "default"
+      },
+      {
+        "title": "Aurora",
+        "label": "SLC",
+        "description": "This app is like having a dream expert in your pocket! I had this weird recurring dream about flying but always getting stuck. The AI helped me understand it was about feeling held back in my creative projects. Since then, I've actually started taking more risks with my art.",
+        "image": {
+          "src": "/imgs/users/Aurora.webp"
+        },
+        "variant": "default"
+      }
+    ]
+  },
+  "worldMap": {
+    "title": "AI Dream Scope Global Dream Database",
+    "description": "Explore dream data collected by AI Dream Scope worldwide, understanding dream symbols and meanings across different cultures and regions."
   },
   "hero": {
     "title": "DREAM INTERPRETATION",

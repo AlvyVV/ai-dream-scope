@@ -5,8 +5,8 @@ import SymbolsSearch from '@/components/blocks/symbols-search';
 
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Card, CardHeader, CardTitle } from '@/components/ui/card';
-import { capitalizeWords } from '@/lib/str';
-import { getCategoryByCode } from '@/models/category';
+import { getCategoryBySlug } from '@/models/category';
+import { getAllDictionaryItems, getPopularDictionaryItems } from '@/models/dictionary';
 import { findItemConfigsByCategory } from '@/models/item-config';
 import { ItemConfig } from '@/types/item-config';
 import { HomeIcon, TagIcon } from 'lucide-react';
@@ -15,49 +15,66 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 // Get popular symbols for a specific category
-async function getCategoryPopularSymbols(locale: string, category: string): Promise<ItemConfig[]> {
+async function getCategoryPopularSymbols(locale: string, categoryId: string): Promise<ItemConfig[]> {
   try {
     // 确保category首字母大写并处理连字符
-    const capitalizedCategory = category
+    const capitalizedCategory = categoryId
       .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
 
-    // 直接使用分类查询函数获取数据
-    const categoryItems = await findItemConfigsByCategory(capitalizedCategory, locale, 1, 12);
-    // 返回结果（已经限制为12条）
+    // 使用getPopularDictionaryItems方法获取数据，支持categoryId筛选
+    const categoryItems = await getPopularDictionaryItems(locale, 12, categoryId);
+
+    // 过滤出有图片的符号
     return categoryItems.filter(item => item.img);
   } catch (error) {
-    console.error(`Failed to get popular dream symbols for category [${category}]:`, error);
+    console.error(`Failed to get popular dream symbols for category [${categoryId}]:`, error);
     return [];
   }
 }
 
 // Get all symbols for a specific category
-async function getCategoryItems(locale: string, category: string): Promise<ItemConfig[]> {
+async function getCategoryItems(locale: string, categorySlug: string): Promise<ItemConfig[]> {
   try {
     // 确保category首字母大写并处理连字符
-    const capitalizedCategory = category
+    const capitalizedCategory = categorySlug
       .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
 
-    // 直接使用分类查询函数获取数据
-    const categoryItems = await findItemConfigsByCategory(capitalizedCategory, locale, 1, 1000);
+    // 使用改造后的getAllDictionaryItems方法，支持categoryId筛选
+    const dictionaryItems = await getAllDictionaryItems(locale, capitalizedCategory);
 
-    return categoryItems;
+    // 如果未获取到数据，则回退到原来的查询方法
+    if (dictionaryItems.length === 0) {
+      console.log(`未通过getAllDictionaryItems获取到分类 [${categorySlug}] 的字典项，回退到常规查询...`);
+      return await findItemConfigsByCategory(capitalizedCategory, locale, 1, 1000);
+    }
+
+    return dictionaryItems;
   } catch (error) {
-    console.error(`Failed to get all dream symbols for category [${category}]:`, error);
-    return [];
+    console.error(`Failed to get all dream symbols for category [${categorySlug}]:`, error);
+    // 出错时回退到原来的查询方法
+    try {
+      const capitalizedCategory = categorySlug
+        .split('-')
+        .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+      return await findItemConfigsByCategory(capitalizedCategory, locale, 1, 1000);
+    } catch {
+      return [];
+    }
   }
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ category: string }> }) {
-  // Get current language
-  const locale = await getLocale();
-  const { category } = await params;
-  // Get category information
-  const categoryInfo = await getCategoryByCode(category, locale);
+  const resolvedParams = await params;
+  const { category } = resolvedParams;
+  console.log('generateMetadata - Fetching category:', category);
+
+  const categoryInfo = await getCategoryBySlug(category);
+
   if (!categoryInfo) return { notFound: true };
 
   // Get SEO info from page_config
@@ -73,29 +90,41 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
-  // Get current language
+  // Get current language for other functions
   const locale = await getLocale();
-  const { category } = await params;
+  const resolvedParams = await params;
+  const { category } = resolvedParams;
 
-  // Get category information
-  console.log('category', category, locale);
-  const categoryInfo = await getCategoryByCode(category, locale);
-  console.log('categoryInfo', categoryInfo);
+  console.log('CategoryPage - Fetching category:', category);
 
-  if (!categoryInfo) notFound();
+  const categoryInfo = await getCategoryBySlug(category);
 
-  // Get Hero content from page_config
+  if (!categoryInfo) {
+    console.log('Category not found:', category);
+    notFound();
+  }
+
   const pageConfig = categoryInfo.page_config || {};
 
   const heroContent = pageConfig.hero || {};
 
-  // Get popular symbols for this category
-  const categoryPopularSymbols = await getCategoryPopularSymbols(locale, capitalizeWords(category));
+  // 增加错误处理，防止在获取热门符号和所有符号时出错
+  let categoryPopularSymbols: ItemConfig[] = [];
+  try {
+    categoryPopularSymbols = await getCategoryPopularSymbols(locale, categoryInfo.category_id);
+  } catch (error) {
+    console.error('Error fetching popular symbols:', error);
+    categoryPopularSymbols = [];
+  }
 
-  // 获取该分类下的所有符号
-  const allCategorySymbols = await getCategoryItems(locale, capitalizeWords(category));
+  let allCategorySymbols: ItemConfig[] = [];
+  try {
+    allCategorySymbols = await getCategoryItems(locale, category);
+  } catch (error) {
+    console.error('Error fetching all category symbols:', error);
+    allCategorySymbols = [];
+  }
 
-  // Add tracking analytics
   const hasSymbols = categoryPopularSymbols.length > 0;
 
   return (
@@ -186,7 +215,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
               <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                 {categoryPopularSymbols.length > 0
                   ? categoryPopularSymbols.map(symbol => (
-                      <Link href={`/dream-dictionary/${symbol.code}`} key={symbol.id}>
+                      <Link href={`/dream-dictionary/${symbol.code}`} key={symbol.code}>
                         <Card className="group h-full overflow-hidden bg-white/90 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg dark:bg-gray-900/90 hover:shadow-purple-200/30 dark:hover:shadow-purple-900/30 border-0">
                           <div className="aspect-square overflow-hidden relative">
                             <img

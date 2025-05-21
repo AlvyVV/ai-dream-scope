@@ -3,57 +3,19 @@ import Header from '@/components/blocks/header';
 import SymbolsSearch from '@/components/blocks/symbols-search';
 import SymbolsAlphabetList from '@/components/blocks/SymbolsAlphabetList';
 import { Card, CardHeader, CardTitle } from '@/components/ui/card';
-import { getItemConfigCountByLocale, getItemConfigsByLocale, getItemConfigsSimpleByLocale } from '@/models/item-config';
-import { getLandingPage } from '@/services/page';
-import { ItemConfig } from '@/types/item-config';
+import { getAllDictionaryItems, getPopularDictionaryItems } from '@/models/dictionary';
+import { getPage } from '@/services/load-page';
+import type { DreamDictionaryPage } from '@/types/pages/dream-dictionary';
 import { Sparkles } from 'lucide-react';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 
-// import { useTranslations } from 'next-intl';
-
 // 定义字母表数组
 const alphabet = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
 
-// 获取热门梦境符号数据,分页查询
-async function getPopularSymbols(locale: string): Promise<ItemConfig[]> {
-  try {
-    // 获取当前语言的所有项目
-    return await getItemConfigsByLocale(locale, 1, 18);
-  } catch (error) {
-    console.error('获取热门梦境符号失败:', error);
-    return [];
-  }
-}
-
-// 模拟获取按字母分组的符号数据
-async function getSymbolsByLetter(locale: string): Promise<ItemConfig[]> {
-  try {
-    // 1. 获取总数量
-    const totalCount = await getItemConfigCountByLocale(locale);
-
-    // 2. 计算需要查询多少批次(每批100个)
-    const batchSize = 100;
-    const batchCount = Math.ceil(totalCount / batchSize);
-
-    // 3. 并行查询所有数据
-    const fetchPromises = Array.from({ length: batchCount }, (_, i) => {
-      return getItemConfigsSimpleByLocale(locale, i + 1, batchSize);
-    });
-
-    const batchResults = await Promise.all(fetchPromises);
-
-    // 4. 合并所有结果
-    return batchResults.flat() as ItemConfig[];
-  } catch (error) {
-    console.error('获取按字母分组的符号数据失败:', error);
-    return [];
-  }
-}
-
 export async function generateMetadata() {
   const locale = await getLocale();
-  const page = await getLandingPage('dictionary', locale);
+  const page = await getPage<DreamDictionaryPage>(locale, 'dictionary');
 
   return {
     title: page.meta?.title,
@@ -64,13 +26,13 @@ export async function generateMetadata() {
 export default async function DreamDictionaryPage() {
   // 获取当前语言
   const locale = await getLocale();
-  const page = await getLandingPage('dictionary', locale);
+  const page = await getPage<DreamDictionaryPage>(locale, 'dictionary');
 
-  // 获取热门梦境符号
-  const popularSymbols = await getPopularSymbols(locale);
+  // 使用pgclient获取热门梦境符号
+  const popularSymbols = await getPopularDictionaryItems(locale);
 
-  // 获取按字母分组的符号
-  const symbolsByLetter = await getSymbolsByLetter(locale);
+  // 使用pgclient获取按字母分组的符号
+  const symbolsByLetter = await getAllDictionaryItems(locale);
 
   return (
     <div className="min-h-screen">
@@ -145,11 +107,11 @@ export default async function DreamDictionaryPage() {
           <div className="w-full pr-2 lg:w-3/4 sm:pr-4">
             {/* 热门符号 */}
             <section className="mb-12">
-              <h2 className="mb-4 text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100 md:text-2xl md:mb-6">Common Dream Symbols</h2>
+              <h2 className="mb-4 text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100 md:text-2xl md:mb-6">{page.popularSymbolsTitle || 'Common Dream Symbols'}</h2>
               <div className="grid grid-cols-3 gap-2 sm:gap-3 md:grid-cols-4 lg:grid-cols-6 md:gap-4 lg:gap-5">
                 {popularSymbols.length > 0
                   ? popularSymbols.map(symbol => (
-                      <Link href={`/dream-dictionary/${symbol.code}`} key={symbol.id}>
+                      <Link href={`/dream-dictionary/${symbol.code}`} key={symbol.code}>
                         <Card className="group h-full overflow-hidden bg-white/90 transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-gray-900/90">
                           <div className="aspect-square overflow-hidden">
                             <img
